@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<title></title>
+	<head>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="stylesheet" href="css/main.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/fonts.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" media="screen" type="text/css" />
+	    
+	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+	    <script type="text/javascript" src="js/TopupForm.js"></script>
+	    <script type="text/javascript" src="js/TopupFormOnLoad.js"></script>
+	</head>
+	<body>
+		<form id="topupForm" name="topupForm" action="TopupFormPDF.jsp" method="POST">
+		    <div id="step1" style="display:block;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="activeStepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="activeStep">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1>HOW TO TOP UP YOUR FOORD INVESTMENT</h1>
+                <p>
+                    <ol>
+                        <li><b>Complete</b> all relevant sections in this form, <b>print</b> it and <b>sign</b> where required. If you require any assistance, please call us on 021 531 5085.</li>
+                        <li><b>Fax</b> the signed form to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.</li>
+                        <li><b>Post</b> or <b>courier</b> the original form to <b>Foord Unit Trusts, PO Box 135, Howard Place, 7450</b>.</li>
+                        <li>Please note that the business cut-off time for receiving instructions is 14h00.</li>
+                    </ol>
+                </p>
+                <p class="paddedNavigationParagraph">
+                    <input type="submit" value="NEXT >" class="navigationInput" onclick="$('#topupForm').validate()" />
+                </p>
+            </div>
+            
+            <div id="step2" style="display: none;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="activeStepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="activeStep">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h1>INVESTOR DETAILS</h1>
+                    <h2>STATUS</h2>
+                    <input type="radio" id="naturalPerson" name="status" value="naturalPerson" onclick="statusChanged();" checked />
+                    <label for="naturalPerson">
+                        Natural Person
+                    </label>
+                    &nbsp;
+                    <input type="radio" id="legalEntity" name="status" value="legalEntity" onclick="statusChanged();" />
+                    <label for="legalEntity">
+                        Legal Entity, Partnerships and Trusts
+                    </label>
+                </div>
+                <div id="naturalPersonDiv" style="display:block;">
+                    <p>
+                        <h2>CAPACITY</h2>
+                        <input type="radio" id="singleInvestor" name="capacity" value="singleInvestor" onclick="capacityChanged();" checked />
+                        <label for="singleInvestor">
+                            Single Investor
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="jointNameInvestor" name="capacity" value="jointNameInvestor" onclick="capacityChanged();" />
+                        <label for="jointNameInvestor">
+                            Joint name investors
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="personActingOnBehalf" name="capacity" value="personActingOnBehalf" onclick="capacityChanged();" />
+                        <label for="personActingOnBehalf">
+                            Person acting on behalf of an investor&nbsp;<img src="img/tooltip_darkgrey.png" class="onbehalf" style="vertical-align:text-bottom;" />
+                        </label>
+                    </p>
+                    <div id="naturalPersonJointNameDiv" style="display:none;">
+                        <p>
+                            <input type="radio" id="anyJointInvestorToSign" name="jointInvestorsToSign" value="anyJointInvestorToSign" checked />
+                            <label for="anyJointInvestorToSign">
+                                Any joint investor to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="bothJointInvestorsToSign" name="jointInvestorsToSign" value="bothJointInvestorsToSign" />
+                            <label for="bothJointInvestorsToSign">
+                                Both joint investors to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="all3JointInvestorsToSign" name="jointInvestorsToSign" value="all3JointInvestorsToSign" />
+                            <label for="all3JointInvestorsToSign">
+                                All 3 joint investors to sign
+                            </label>
+                        </p>
+                    </div>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                NAME &amp; SURNAME
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="naturalPersonNameSurname" name="naturalPersonNameSurname" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                CLIENT NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonClientNumber" name="naturalPersonClientNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                TELEPHONE NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="naturalPersonTelephoneNumber" name="naturalPersonTelephoneNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                EMAIL ADDRESS
+                            </label>
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="naturalPersonEmailAddress" name="naturalPersonEmailAddress" maxlength="50" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="legalEntityDiv" style="display:none;" class="paddedDiv">
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                INSTITUTION
+                            </td>
+                            <td class="inputColumn required">
+                            <input type="text" id="legalEntityName" name="legalEntityName" maxlength="50" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                CLIENT NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn required">
+                            <input type="text" id="legalEntityClientNumber" name="legalEntityClientNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                REGISTRATION NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn">
+                            <input type="text" id="legalEntityRegistrationNumber" name="legalEntityRegistrationNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                TELEPHONE NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn required">
+                            <input type="text" id="legalEntityTelephoneNumber" name="legalEntityTelephoneNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                CONTACT EMAIL ADDRESS
+                            </label>
+                            </td>
+                            <td class="inputColumn required">
+                            <input type="text" id="legalEntityContactEmailAddress" name="legalEntityContactEmailAddress" maxlength="50" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step1');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#topupForm').validate()" />
+                </p>
+            </div>
+		    
+			<div id="step3" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="activeStepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="activeStep">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<h1>INVESTMENT DETAILS</h1>
+				<p>
+					<h2>Notes</h2>
+					<ul>
+						<li>Fund minimums apply: R1,000 lump sum or monthly debit order amount.</li>
+						<li>Enter either a lump sum OR monthly contribution OR both for at least one fund.</li>
+                        <li>* This facility allows you to automatically increase your investment amount by a set percentage on each anniversary date.</li>
+                        <li>** Should you elect to have your February and August distributions paid out, they will be paid out into the bank account specified in the Payout Account section. All distributions below R1,000 will be automatically re-invested.</li>
+					</ul>
+				</p>
+				<p>
+					Subject to the conditions of the relevant Trust Deeds, I hereby apply to purchase units in the following funds, at the ruling fund prices:
+				</p>
+				<table class="gridTable" cellspacing="0">
+					<tr>
+						<th style="padding: 6px;">FUND NAME</th>
+						<th style="padding: 6px;">LUMP SUM</th>
+						<th style="padding: 6px;">MONTHLY</th>
+						<th style="padding: 6px;">ANNUAL<br>DEBIT<br>ORDER INCREASE *</th>
+						<th style="padding: 6px;">ACC. NO.<br>(IF MULTIPLE<br>ACCOUNTS)</th>
+						<th style="padding: 6px;">DISTRIBUTIONS<br>**</th>
+					</tr>
+					<tr>
+                        <td>
+                            Foord<br>Conservative
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetConservativeLumpSum" name="invDetConservativeLumpSum" class="currency" size="5" maxlength="10" />
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetConservativeMonthlyAmount" name="invDetConservativeMonthlyAmount" class="currency" size="4" maxlength="10" />
+                        </td>
+                        <td>
+                            <input type="text" id="invDetConservativeAnnualDebitOrderIncrease" name="invDetConservativeAnnualDebitOrderIncrease" class="percentage" size="3" maxlength="3" />&nbsp;%
+                        </td>
+                        <td>
+                            <input type="text" id="invDetConservativeFundAccountNumber" name="invDetConservativeFundAccountNumber" size="4" maxlength="6" />
+                        </td>
+                        <td class="lowInputColumn">
+                            <input type="radio" id="conservativeReinvest" name="conservativeDistributions" style="background-color: #FFFFFF;" value="conservativeReinvest" checked />
+                            <label for="conservativeReinvest">
+                                Reinvest
+                            </label>
+                            <br>
+                            <input type="radio" id="conservativePayout" name="conservativeDistributions" style="background-color: #FFFFFF;" value="conservativePayout" />
+                            <label for="conservativePayout">
+                                Payout
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Foord<br>Balanced
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetBalancedLumpSum" name="invDetBalancedLumpSum" class="currency" size="5" maxlength="10" />
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetBalancedMonthlyAmount" name="invDetBalancedMonthlyAmount" class="currency" size="4" maxlength="10" />
+                        </td>
+                        <td>
+                            <input type="text" id="invDetBalancedAnnualDebitOrderIncrease" name="invDetBalancedAnnualDebitOrderIncrease" class="percentage" size="3" maxlength="3" />&nbsp;%
+                        </td>
+                        <td>
+                            <input type="text" id="invDetBalancedFundAccountNumber" name="invDetBalancedFundAccountNumber" size="4" maxlength="6" />
+                        </td>
+                        <td class="lowInputColumn">
+                            <input type="radio" id="balancedReinvest" name="balancedDistributions" style="background-color: #EEEEEE;" value="balancedReinvest" checked />
+                            <label for="balancedReinvest">
+                                Reinvest
+                            </label>
+                            <br>
+                            <input type="radio" id="balancedPayout" name="balancedDistributions" style="background-color: #EEEEEE;" value="balancedPayout" />
+                            <label for="balancedPayout">
+                                Payout
+                            </label>
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+							Foord<br>Flexible FoF
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetFlexibleLumpSum" name="invDetFlexibleLumpSum" class="currency" size="5" maxlength="10" />
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetFlexibleMonthlyAmount" name="invDetFlexibleMonthlyAmount" class="currency" size="4" maxlength="10" />
+						</td>
+						<td>
+							<input type="text" id="invDetFlexibleAnnualDebitOrderIncrease" name="invDetFlexibleAnnualDebitOrderIncrease" class="percentage" size="3" maxlength="3" />&nbsp;%
+						</td>
+						<td>
+                            <input type="text" id="invDetFlexibleFundAccountNumber" name="invDetFlexibleFundAccountNumber" size="4" maxlength="6" />
+                        </td>
+						<td class="lowInputColumn">
+							<input type="radio" id="flexibleReinvest" name="flexibleDistributions" style="background-color: #FFFFFF;" value="flexibleReinvest" checked />
+							<label for="flexibleReinvest">
+								Reinvest
+							</label>
+							<br>
+							<input type="radio" id="flexiblePayout" name="flexibleDistributions" style="background-color: #FFFFFF;" value="flexiblePayout" />
+							<label for="flexiblePayout">
+								Payout
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Foord<br>Equity
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetEquityLumpSum" name="invDetEquityLumpSum" class="currency" size="5" maxlength="10" />
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetEquityMonthlyAmount" name="invDetEquityMonthlyAmount" class="currency" size="4" maxlength="10" />
+						</td>
+						<td>
+							<input type="text" id="invDetEquityAnnualDebitOrderIncrease" name="invDetEquityAnnualDebitOrderIncrease" class="percentage" size="3" maxlength="3" />&nbsp;%
+						</td>
+						<td>
+                            <input type="text" id="invDetEquityFundAccountNumber" name="invDetEquityFundAccountNumber" size="4" maxlength="6" />
+                        </td>
+						<td class="lowInputColumn">
+							<input type="radio" id="equityReinvest" name="equityDistributions" style="background-color: #FFFFFF;" value="equityReinvest" checked />
+							<label for="equityReinvest">
+								Reinvest
+							</label>
+							<br>
+							<input type="radio" id="equityPayout" name="equityDistributions" style="background-color: #FFFFFF;" value="equityPayout" />
+							<label for="equityPayout">
+								Payout
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Foord<br>International<br>Feeder
+						</td>
+						<td colspan=5 style="color: #ff0000; text-align: center;">
+							CLOSED
+						</td>
+					</tr>
+					<tr>
+                        <td>
+                            Foord<br>Global Equity<br>Feeder
+                        </td>
+                        <td colspan=5 style="color: #ff0000; text-align: center;">
+                           CLOSED
+                        </td>
+                    </tr>
+				</table>
+				<p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step2');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#topupForm').validate()" />
+                </p>
+			</div>
+				
+			<div id="step4" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="activeStepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="activeStep">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h1>PAYMENT DETAILS</h1>
+                    <h2>PAYMENT METHOD</h2>
+                    <input type="checkbox" id="paymentMethodMonthlyDebitOrder" name="paymentMethodMonthlyDebitOrder" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodMonthlyDebitOrder">
+                        Monthly Debit Order
+                    </label>
+                    &nbsp;
+                    <input type="checkbox" id="paymentMethodEft" name="paymentMethodEft" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodEft">
+                        Electronic Transfer (EFT)
+                    </label>
+                    &nbsp;
+                    <input type="checkbox" id="paymentMethodChequeDeposit" name="paymentMethodChequeDeposit" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodChequeDeposit">
+                        Cheque Deposit
+                    </label>
+                </div>
+				<table class="formTable paddedParagraph">
+				    <tr>
+				        <td class="labelColumnWide">
+				            SOURCE OF INVESTMENT FUNDS
+				        </td>
+				        <td>
+				            <input type="checkbox" id="sourceInvestmentFundsSavings" name="sourceInvestmentFundsSavings" />
+				            <label for="sourceInvestmentFundsSavings">
+				                Savings
+				            </label>
+				            &nbsp;
+				            <input type="checkbox" id="sourceInvestmentFundsBonus" name="sourceInvestmentFundsBonus" />
+				            <label for="sourceInvestmentFundsBonus">
+				                Bonus
+				            </label>
+				            &nbsp;
+				            <input type="checkbox" id="sourceInvestmentFundsInheritance" name="sourceInvestmentFundsInheritance" />
+				            <label for="acceptedPayoutAccountInheritance">
+				                Inheritance
+				            </label>
+				            <br>
+				            <input type="checkbox" id="sourceInvestmentFundsOther" name="sourceInvestmentFundsOther" onclick="sourceInvestmentFundsOtherChanged();" />
+				            <label for="sourceInvestmentFundsOther">
+				                Other:
+				            </label>
+				            <br>
+				            <input type="text" id="sourceInvestmentFundsOtherDescription" name="sourceInvestmentFundsOtherDescription" class="fancyInput" style="width: 230px;" size="30" maxlength="30" disabled />
+				        </td>
+				    </tr>
+				</table>
+                <div id="foordBankDetailsDiv" style="display: none; margin-bottom: 12px;">
+                    <h2>FOORD BANK DETAILS</h2>
+                    <table>
+                        <tr>
+                            <td style="width: 120px;">
+                                Account Name
+                            </td>
+                            <td>
+                                FOORD UNIT TRUSTS LTD
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Account Number
+                            </td>
+                            <td>
+                                6204 4711 366
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bank Name
+                            </td>
+                            <td>
+                                FIRST NATIONAL BANK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Branch Name
+                            </td>
+                            <td>
+                                REMOTE BANKING SERVICES
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Branch Code
+                            </td>
+                            <td>
+                                250655
+                            </td>
+                        </tr>
+                    </table>    
+                </div>
+                <div id="debitOrderDiv" style="display: none;">
+                    <table id="monthlyDebitOrderTable" class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                DEBIT ORDER DAY
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="monthlyDebitOrderDay" name="monthlyDebitOrderDay"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                DEBIT ORDER COMMENCEMENT<br>
+                                <div class="subLabel">Please allow at least 3 days notice</div>
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="monthlyDebitOrderCommencementMonth" name="monthlyDebitOrderCommencementMonth"></select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h2>CHANGE OF BANK DETAILS</h2>
+                    <input type="checkbox" id="changeBankDetails" name="changeBankDetails" onclick="changeBankDetailsChanged();" />
+                    <label for="changeBankDetails">
+                        Change Bank Details
+                    </label>
+                    <div id="changeBankDetailsDiv" style="display:none;" class="paddedDiv">
+                        <h2>Notes</h2>
+                        <ul>
+                            <li>If your bank account details have changed, a cancelled cheque or recent bank statement must accompany this form.</li>
+							<li>If the bank account holder is a third party, we require a copy of that person's Identity Document and specimen signature.</li>
+							<li>No payments will be made into credit card or post office accounts.</li>
+							<li>No payments will be made to third parties.</li>
+							<li>No payments will be made by cheque.</li>
+                        </ul>
+                        <table id="changeBankDetailsForm" class="formTable">
+                            <tr>
+                                <td class="labelColumnWide">ACCOUNT HOLDER NAMES</td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="changeBankDetailsAccountHolderNames" name="changeBankDetailsAccountHolderNames" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">BANK</td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="changeBankDetailsBank" name="changeBankDetailsBank" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">BRANCH</td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="changeBankDetailsBranch" name="changeBankDetailsBranch" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">BRANCH CODE</td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="changeBankDetailsBranchCode" name="changeBankDetailsBranchCode" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">ACCOUNT NUMBER</td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="changeBankDetailsAccountNumber" name="changeBankDetailsAccountNumber" maxlength="30" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step3');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#topupForm').validate()" />
+                </p>
+            </div>
+			
+			<div id="step5" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="activeStepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="activeStep">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h1>FINAL STEPS</h1>
+                    <p>
+                        <ol>
+                            <li>Once you are satisfied that all fields have been completed accurately and have accepted all the terms and conditions below, click the <b>GENERATE FORM</b> button.</li>
+                            <li><b>Save</b> the compiled PDF document somewhere appropriate on your computer. You will also be emailed a copy.</li>
+                            <li><b>Print</b> the document and <b>sign</b> where required.</li>
+                            <li><b>Fax</b> the signed form to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.</li>
+                            <li><b>Post</b> or <b>courier</b> the original form to <b>Foord Unit Trusts, PO Box 135, Howard Place, 7450</b>.</li>
+                            <li>Please note that the business cut-off time for receiving instructions is 14h00.</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="investorDeclaration" name="investorDeclaration" onclick="termsConditionsChecked();" />
+                        <label for="investorDeclaration">
+                            I have read and agree to the <a href="InvestorDeclaration.html" class="fancyPopup">Investor Declaration</a>
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="foordTermsConditions" name="foordTermsConditions" onclick="termsConditionsChecked();" />
+                        <label for="foordTermsConditions">
+                            I have read and agree to the <a href="FoordTermsConditions.html" class="fancyPopup">Foord Terms &amp; Conditions</a> of trading
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="complianceComplaints" name="complianceComplaints" onclick="termsConditionsChecked();" />
+                        <label for="complianceComplaints">
+                            I am aware of the <a href="ComplianceComplaints.html" class="fancyPopup">Compliance And Complaints Policy</a>
+                        </label>
+                    </p>
+                    <p class="paddedNavigationParagraph">
+                        <input type="button" value="< BACK" onClick="showLayer('step4');" class="navigationInput" />&nbsp;&nbsp;<input id="generateFormInput" type="submit" value="GENERATE FORM" disabled class="compileFormDisabled" />
+                    </p>
+                </div>
+            </div>
+			
+			<div id="step6" style="display: none;">
+                <div>
+                    <h1>THANK YOU</h1>
+                    <ul>
+                        <li>Your browser will download the compiled form shortly.</li>
+                        <li>The compiled form has been emailed to the supplied email address.</li>
+                    </ul>
+                </div>
+            </div>
+		</form>
+		
+	</body>
+</html>

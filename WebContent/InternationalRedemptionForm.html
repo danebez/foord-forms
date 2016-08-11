@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<title></title>
+	<head>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="stylesheet" href="css/main.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/fonts.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" media="screen" type="text/css" />
+	    
+	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+	    <script type="text/javascript" src="js/InternationalRedemptionForm.js"></script>
+	    <script type="text/javascript" src="js/InternationalRedemptionFormOnLoad.js"></script>
+	</head>
+	<body>
+		<form id="internationalRedemptionForm" name="internationalRedemptionForm" action="InternationalRedemptionFormPDF.jsp" method="POST">
+		    <div id="step1" style="display:block;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="activeStepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">REDEMPTION DETAILS</td>
+                           <td class="stepHeading">PROCEED DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="activeStep">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1>HOW TO REDEEM YOUR FOORD INTERNATIONAL TRUST UNITS<br>(DIRECT OFFSHORE REDEMPTION)</h1>
+                <p>
+                    <ol>
+                        <li><b>Complete</b> all relevant sections in this form, <b>print</b> it and <b>sign</b> where required. If you require any assistance, please call us on 021 531 5085.</li>
+                        <li>South African investors should <b>fax</b> the form to Foord Unit Trusts on 021 532 6970 or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>, and <b>post</b> the original form to Foord Unit Trusts at PO Box 135, Howard Place, 7450. Foord will courier these documents to Guernsey.</li>
+                        <li>All other investors should <b>post</b> the original form to Foord Asset Management (Guernsey) Limited, PO Box 105, Trafalgar Court, Admiral Park, St Peter Port, Guernsey, Channel Islands, GY1 2HT.</li>
+                    </ol>
+                </p>
+                <h2>Notes:</h2>
+                <p>
+                    <ul>
+                        <li>The Foord International Trust trades weekly. In order to comply with the Guernsey cut-off time of 16h00 GMT each Monday, instructions must reach Foord Unit Trusts by 14h00 on Friday.</li>
+                        <li>Owing to Guernsey regulations, your redemption will be processed on receipt of the faxed instruction, but your money will only be paid once the original investment Redemption Form has been received in Guernsey. We recommend prioritising the submission of your original forms.</li>
+                        <li>International settlements can take up to 48 hours once authorised. Authorisation is typically handled on a Thursday.</li>
+                        <li>Anti-money laundering regulations in Guernsey prohibit the payment of redemption monies to third parties.</li>
+                    </ul>
+                </p>
+                <p class="paddedNavigationParagraph">
+                    <input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalRedemptionForm').validate()" />
+                </p>
+            </div>
+		    
+			<div id="step2" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="activeStepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">REDEMPTION DETAILS</td>
+                           <td class="stepHeading">PROCEED DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="activeStep">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<div>
+                    <h1>INVESTOR DETAILS</h1>
+                    <h2>STATUS</h2>
+                    <input type="radio" id="naturalPerson" name="status" value="naturalPerson" onclick="statusChanged();" checked />
+                    <label for="naturalPerson">
+                        Natural Person(s)
+                    </label>
+                    &nbsp;
+                    <input type="radio" id="corporate" name="status" value="corporate" onclick="statusChanged();" />
+                    <label for="corporate">
+                        Corporate
+                    </label>
+                </div>
+                <div id="naturalPersonDiv" style="display:block;">
+                    <p>
+                        <h2>CAPACITY</h2>                   
+                        <input type="radio" id="singleInvestor" name="capacity" value="singleInvestor" checked onclick="capacityChanged();" />
+                        <label for="singleInvestor">
+                            Single Investor
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="jointNameInvestor" name="capacity" value="jointNameInvestor" onclick="capacityChanged();" />
+                        <label for="jointNameInvestor">
+                            Joint name investors&nbsp;<img src="img/tooltip_darkgrey.png" class="joint" style="vertical-align:text-bottom;" />
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="personActingOnBehalf" name="capacity" value="personActingOnBehalf" onclick="capacityChanged();" />
+                        <label for="personActingOnBehalf">
+                            Person acting on behalf of an investor&nbsp;<img src="img/tooltip_darkgrey.png" class="onbehalf" style="vertical-align:text-bottom;" />
+                        </label>
+                    </p>
+                    <div id="naturalPersonJointNameDiv" style="display:none;">
+                        <p>
+                            <input type="radio" id="anyJointInvestorToSign" name="jointInvestorsToSign" value="anyJointInvestorToSign" onclick="jointInvestorsChanged();" checked />
+                            <label for="anyJointInvestorToSign">
+                                Any joint investor to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="bothJointInvestorsToSign" name="jointInvestorsToSign" value="bothJointInvestorsToSign" />
+                            <label for="bothJointInvestorsToSign">
+                                Both joint investors to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="all3JointInvestorsToSign" name="jointInvestorsToSign" value="all3JointInvestorsToSign" />
+                            <label for="all3JointInvestorsToSign">
+                                All 3 joint investors to sign
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <h2>INVESTOR</h2>
+                <h2>Notes</h2>
+                <ul>
+                    <li>Monies shall only be paid out once the original redemption form and all the required documentation is received.</li>
+                    <li>No third party payments will be made.</li>
+                    <li>If the names, addresses or banking details given differ to those shown on the Fund's Register, the Registrar will require acceptable documentation before settlement in respect of a redemption can be made.</li>
+                </ul>
+				<table class="formTable">
+                    <tr>
+                        <td class="labelColumnWide">
+                            INVESTOR NAME
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorName" name="investorName" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            FOORD CLIENT NUMBER
+                        </td>
+                        <td class="inputColumn">
+                            <input type="text" id="investorFoordClientNumber" name="investorFoordClientNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            ID / INCORPORATION NUMBER
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorIdIncorporationNumber" name="investorIdIncorporationNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            TELEPHONE NUMBER
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorTelephoneNumber" name="investorTelephoneNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            EMAIL ADDRESS
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorEmailAddress" name="investorEmailAddress" maxlength="50" />
+                        </td>
+                    </tr>
+                </table>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step1');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalRedemptionForm').validate()" />
+                </p>
+            </div>
+            
+            <div id="step3" style="display: none;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="activeStepHeading">REDEMPTION DETAILS</td>
+                           <td class="stepHeading">PROCEED DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="activeStep">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1>REDEMPTION DETAILS</h1>
+                I / We hereby apply to redeem the Units in the Foord International Trust as detailed on this form at the redemption price ruling on the Redemption Day in respect of which this redemption is accepted on the terms and subject to the Trust Deed dated 5 March 1997, as amended, and subject to the conditions set out in
+                the latest Scheme Particulars of the Fund.
+                <h2>Notes:</h2>
+                <ul>
+                    <li>In the case of a <b>partial redemption</b> of a holding, if the remaining value of the units is less than USD 10,000 or currency equivalent, the Manager is permitted to deem the redemption request to be in favour of the whole holding. If the number of shares / amount to be redeemed is not entered, this Form will deem to relate to the entire holding registered in the names given unless a contract in respect of this holding has been issued, then this Form will deem to relate the the number of shares represented by that contract. If an amount is entered, an amount equal to or nearest over that value will be realised.</li>
+                    <li>Units will be redeemed in the currency of the Fund at the redemption price calculated for the Subscription Day in accordance with the procedure</li>
+                </ul>
+                <table class="gridTable">
+                    <tr>
+                        <th>FUND</th>
+                        <th>REDEMPTION AMOUNT</th>
+                        <th>or</th>
+                        <th>NUMBER OF UNITS</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Foord International Trust
+                        </td>
+                        <td>
+                            <div class="fancySelect" style="width: 70px;">
+                                <select id="investmentLumpsumCurrency" name="investmentLumpsumCurrency" style="width: 70px;">
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                </select>
+                            </div>
+                            &nbsp;
+                            <input type="text" id="investmentLumpsum" name="investmentLumpsum" class="currency" size="8" maxlength="10" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" id="investmentNumberOfUnits" name="investmentNumberOfUnits" size="8" maxlength="10" />
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    Does this represent your entire holding?
+                    &nbsp;&nbsp;
+                    <input type="radio" id="entireHoldingYes" name="entireHolding" value="entireHoldingYes" checked />
+                    <label for="entireHoldingYes">
+                        YES
+                    </label>
+                    &nbsp;
+                    <input type="radio" id="entireHoldingNo" name="entireHolding" value="entireHoldingNo" />
+                    <label for="entireHoldingNo">
+                        NO
+                    </label>
+                </p>
+				<p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step2');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalRedemptionForm').validate()" />
+                </p>
+			</div>
+			
+			<div id="step4" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">REDEMPTION DETAILS</td>
+                           <td class="activeStepHeading">PROCEED DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="activeStep">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+			    <h1>PROCEED DETAILS</h1>
+			    <h2>Notes:</h2>
+                <ul>
+                    <li>Complete this section only if your banking details have changed since the purchase of your initial units.</li>
+                    <li>A copy of your bank statement or a cancelled cheque is required.</li>
+                    <li>Telegraphic transfers will be deducted from the redemption proceeds where those proceeds are transferred to the bank account as detailed above.</li>
+                    <li>If the Manager is unable to comply with an instruction to telegraphically transfer funds for any reason, then payment will be made by cheque to the bank account of the relevant payee.</li>
+                    <li>Payments cannot be made to third parties. Payment will only be made to an account in the name/s of the registered holder/s.</li>
+                </ul>
+                <table class="formTable">
+                    <tr>
+                        <td class="labelColumnWide">
+                            CORRESPONDENT BANK NAME
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionCorrespondentBankName" name="redemptionCorrespondentBankName" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            BANK ADDRESS
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionCorrespondentBankAddress1" name="redemptionCorrespondentBankAddress1" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionCorrespondentBankAddress2" name="redemptionCorrespondentBankAddress2" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                        </td>
+                        <td class="inputColumn">
+                            <input type="text" id="redemptionCorrespondentBankAddress3" name="redemptionCorrespondentBankAddress3" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            BANK POSTAL CODE
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionCorrespondentBankAddress4" name="redemptionCorrespondentBankAddress4" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            SWIFT CODE
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionCorrespondentBankSwiftCode" name="redemptionCorrespondentBankSwiftCode" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            ABA/CHIPS (USD only) / SORT CODE / CHAPS (GBP only)
+                        </td>
+                        <td class="inputColumn2">
+                            <input type="text" id="redemptionAbaChips" name="redemptionAbaChips" maxlength="30" />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td class="labelColumnWide">
+                            RECEIVING BANK NAME
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionReceivingBankName" name="redemptionReceivingBankName" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            SWIFT CODE
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionReceivingBankSwiftCode" name="redemptionReceivingBankSwiftCode" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            RECEIVING BANK ACCOUNT NUMBER
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionReceivingBankAccountNumber" name="redemptionReceivingBankAccountNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            BENEFICIARY ACCOUNT NUMBER (USD &amp; GBP) / IBAN NUMBER (EUR)<br><label class="subLabel">Also to be provided for receipts of USD or EUR within Europe</label>
+                        </td>
+                        <td class="inputColumn4 required">
+                            <input type="text" id="redemptionBeneficiaryAccountNumber" name="redemptionBeneficiaryAccountNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            BENEFICIARY ACCOUNT NAME
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="redemptionBeneficiaryAccountName" name="redemptionBeneficiaryAccountName" maxlength="30" />
+                        </td>
+                    </tr>
+                </table>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step3');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalRedemptionForm').validate()" />
+                </p>
+            </div>
+			
+			<div id="step5" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">REDEMPTION DETAILS</td>
+                           <td class="stepHeading">PROCEED DETAILS</td>
+                           <td class="activeStepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="activeStep">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<div>
+					<h1>FINAL STEPS</h1>
+                    <p>
+                        <ol>
+                            <li>Once you are satisfied that all fields have been completed accurately and have accepted all the terms and conditions below, click the <b>GENERATE FORM</b> button.</li>
+                            <li><b>Save</b> the compiled PDF document somewhere appropriate on your computer. You will also be emailed a copy.</li>
+                            <li><b>Print</b> the document and <b>sign</b> where required.</li>
+                            <li>South African investors should <b>fax</b> the form to Foord Unit Trusts on 021 532 6970 or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>, and <b>post</b> the original form to Foord Unit Trusts at PO Box 135, Howard Place, 7450. Foord will courier these documents to Guernsey.</li>
+                            <li>All other investors should <b>post</b> the original form to Foord Asset Management (Guernsey) Limited, PO Box 105, Trafalgar Court, Admiral Park, St Peter Port, Guernsey, Channel Islands, GY1 2HT.</li>
+                        </ol>
+                    </p>
+                    <h2>Notes:</h2>
+                    <p>
+                        <ul>
+                            <li>The Foord International Trust trades weekly. In order to comply with the Guernsey cut-off time of 16h00 GMT each Monday, instructions must reach Foord Unit Trusts by 14h00 on Friday.</li>
+                            <li>Owing to Guernsey regulations, your redemption will be processed on receipt of the faxed instruction, but your money will only be paid once the original investment Redemption Form has been received in Guernsey. We recommend prioritising the submission of your original forms.</li>
+                            <li>International settlements can take up to 48 hours once authorised. Authorisation is typically handled on a Thursday.</li>
+                            <li>Anti-money laundering regulations in Guernsey prohibit the payment of redemption monies to third parties.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="fitInvestorDeclarations" name="fitInvestorDeclarations" onclick="termsConditionsChecked();" />
+                        <label for="fitInvestorDeclarations">
+                            I have read and agree to the <a href="FITInvestorDeclarations.html" class="fancyPopup">Investor Declarations, Undertakings and Instructions</a>
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="fitComplianceComplaints" name="fitComplianceComplaints" onclick="termsConditionsChecked();" />
+                        <label for="fitComplianceComplaints">
+                            I am aware of the <a href="FITComplianceComplaints.html" class="fancyPopup">Compliance And Complaints Policy</a>
+                        </label>
+                    </p>
+					<p class="paddedNavigationParagraph">
+						<input type="button" value="< BACK" onClick="showLayer('step4');" class="navigationInput" />&nbsp;&nbsp;<input id="generateFormInput" type="submit" value="GENERATE FORM" disabled class="compileFormDisabled" />
+					</p>
+				</div>
+			</div>
+			
+			<div id="step6" style="display: none;">
+                <div>
+                    <h1>THANK YOU</h1>
+                    <ul>
+                        <li>Your browser will download the compiled form shortly.</li>
+                        <li>The compiled form has been emailed to the supplied email address.</li>
+                    </ul>
+                </div>
+            </div>
+		</form>
+	</body>
+</html>

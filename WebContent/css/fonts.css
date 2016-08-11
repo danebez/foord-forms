@@ -1,0 +1,31 @@
+/* heading fonts */
+
+@font-face {
+	font-family: 'Frutiger45LightRegular';
+	src: url('ftl____2-webfont.eot');
+	src: local('☺'), url('ftl____2-webfont.woff') format('woff'),
+		url('ftl____2-webfont.ttf') format('truetype'),
+		url('ftl____2-webfont.svg#webfontNqI8yaek') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Frutiger55RomanRegular';
+	src: url('ftr_____-webfont.eot');
+	src: local('☺'), url('ftr_____-webfont.woff') format('woff'),
+		url('ftr_____-webfont.ttf') format('truetype'),
+		url('ftr_____-webfont.svg#webfontjRKfnAMN') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Frutiger45LightBold';
+	src: url('ftb____0-webfont.eot');
+	src: local('☺'), url('ftb____0-webfont.woff') format('woff'),
+		url('ftb____0-webfont.ttf') format('truetype'),
+		url('ftb____0-webfont.svg#webfontyEnHheLJ') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

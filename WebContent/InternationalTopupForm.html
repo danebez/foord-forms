@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<title></title>
+	<head>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="stylesheet" href="css/main.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/fonts.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" media="screen" type="text/css" />
+	    
+	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+	    <script type="text/javascript" src="js/InternationalTopupForm.js"></script>
+	    <script type="text/javascript" src="js/InternationalTopupFormOnLoad.js"></script>
+	</head>
+	<body>
+		<form id="internationalTopupForm" name="internationalTopupForm" action="InternationalTopupFormPDF.jsp" method="POST">
+		    <div id="step1" style="display:block;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="activeStepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="activeStep">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1>HOW TO TOP UP YOUR FOORD INTERNATIONAL TRUST INVESTMENT<br>(DIRECT OFFSHORE TOP-UP)</h1>
+                <p>
+                    <ol>
+                        <li><b>Complete</b> all relevant sections in this form, <b>print</b> it and <b>sign</b> where required. If you require any assistance, please call us on 021 531 5085.</li>
+                        <li>Investors should <b>fax</b> the form 
+                            <ul>
+                                <li>to Foord Unit Trusts on 021 532 6970 or e-mail to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a><br>
+                                OR</li>
+                                <li>directly to Kleinwort Benson, the administrators in Guernsey on +44(0) 1481 734 546 or e-mail to <a href="mailto:investorservices@kleinwortbenson.com">investorservices@kleinwortbenson.com</a></li>
+                            </ul>
+                        </li>                                         
+                    </ol>
+                </p>
+                <h2>Notes:</h2>
+                <p>
+                    <ul>
+                        <li>The Foord International Trust trades weekly. In order to comply with the Guernsey cut-off time of 16h00 GMT each Monday, instructions must reach Foord Unit Trusts by 14h00 on Friday.</li>
+                        <li>Guernsey regulations do not require investors to post original documents for a top up investment.</li>
+                        <li>International settlements can take up to 48 hours. In order to qualify for the Guernsey cut-off time, your deposit must have settled into the Guernsey bank accounts by 16h00 on a Monday.</li>
+                        <li>In order to effect an international transfer from South Africa, your bank will require a valid tax clearance certificate from you.</li>
+                        <li>Anti-money laundering regulations in Guernsey prohibit money transfers from third parties.</li>
+                    </ul>
+                </p>
+                <p class="paddedNavigationParagraph">
+                    <input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalTopupForm').validate()" />
+                </p>
+            </div>
+            
+			<div id="step2" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="activeStepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="activeStep">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+			    <div>
+                    <h1>INVESTOR DETAILS</h1>
+                    <h2>STATUS</h2>
+                    <input type="radio" id="naturalPerson" name="status" value="naturalPerson" onclick="statusChanged();" checked />
+                    <label for="naturalPerson">
+                        Natural Person(s)
+                    </label>
+                    &nbsp;
+                    <input type="radio" id="corporate" name="status" value="corporate" onclick="statusChanged();" />
+                    <label for="corporate">
+                        Corporate
+                    </label>
+                </div>
+                <div id="naturalPersonDiv" style="display:block;">
+                    <p>
+                        <h2>CAPACITY</h2>                   
+                        <input type="radio" id="singleInvestor" name="capacity" value="singleInvestor" checked onclick="capacityChanged();" />
+                        <label for="singleInvestor">
+                            Single Investor
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="jointNameInvestor" name="capacity" value="jointNameInvestor" onclick="capacityChanged();" />
+                        <label for="jointNameInvestor">
+                            Joint name investors&nbsp;<img src="img/tooltip_darkgrey.png" class="joint" style="vertical-align:text-bottom;" />
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="personActingOnBehalf" name="capacity" value="personActingOnBehalf" onclick="capacityChanged();" />
+                        <label for="personActingOnBehalf">
+                            Person acting on behalf of an investor&nbsp;<img src="img/tooltip_darkgrey.png" class="onbehalf" style="vertical-align:text-bottom;" />
+                        </label>
+                    </p>
+                    <div id="naturalPersonJointNameDiv" style="display:none;">
+                        <p>
+                            <input type="radio" id="anyJointInvestorToSign" name="jointInvestorsToSign" value="anyJointInvestorToSign" checked />
+                            <label for="anyJointInvestorToSign">
+                                Any joint investor to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="bothJointInvestorsToSign" name="jointInvestorsToSign" value="bothJointInvestorsToSign" />
+                            <label for="bothJointInvestorsToSign">
+                                Both joint investors to sign
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="all3JointInvestorsToSign" name="jointInvestorsToSign" value="all3JointInvestorsToSign" />
+                            <label for="all3JointInvestorsToSign">
+                                All 3 joint investors to sign
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <h2>INVESTOR</h2>
+				<table class="formTable">
+                    <tr>
+                        <td class="labelColumnWide">
+                            INVESTOR NAME
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorName" name="investorName" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            FOORD CLIENT NUMBER
+                        </td>
+                        <td class="inputColumn">
+                            <input type="text" id="investorFoordClientNumber" name="investorFoordClientNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            ID / INCORPORATION NUMBER
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorIdIncorporationNumber" name="investorIdIncorporationNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            TELEPHONE NUMBER
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorTelephoneNumber" name="investorTelephoneNumber" maxlength="30" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="labelColumnWide">
+                            EMAIL ADDRESS
+                        </td>
+                        <td class="inputColumn required">
+                            <input type="text" id="investorEmailAddress" name="investorEmailAddress" maxlength="50" />
+                        </td>
+                    </tr>
+                </table>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step1');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalTopupForm').validate()" />
+                </p>
+            </div>
+            
+            <div id="step3" style="display: none;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="activeStepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="activeStep">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1>INVESTMENT DETAILS</h1>
+                I / We hereby apply to subscribe for Units, in the class of Units of the Foord International Trust, as indicated below, at the Subscription Price ruling on the Subscription
+                Day, in respect of which this application is accepted, on the terms and subject to the Trust Deed dated 5 March 1997, as amended, and subject to the conditions
+                set out in the latest Scheme Particulars.
+                <h2>Notes:</h2>
+                <ul>
+                    <li>Minimum investment is USD 1,000 or currency equivalent</li>
+                </ul>
+                <table class="gridTable">
+                    <tr>
+                        <th>FUND</th>
+                        <th>LUMP SUM</th>
+                        <th>or</th>
+                        <th>NUMBER OF UNITS</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Foord International Trust
+                        </td>
+                        <td>
+                            <div class="fancySelect" style="width: 70px;">
+                                <select id="investmentLumpsumCurrency" name="investmentLumpsumCurrency" style="width: 70px;">
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                </select>
+                            </div>
+                            &nbsp;
+                            <input type="text" id="investmentLumpsum" name="investmentLumpsum" class="currency" size="8" maxlength="10" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" id="investmentNumberOfUnits" name="investmentNumberOfUnits" size="8" maxlength="10" />
+                        </td>
+                    </tr>
+                </table>
+				<p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step2');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalTopupForm').validate()" />
+                </p>
+			</div>
+			
+			<div id="step4" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="activeStepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="activeStep">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+			    <h1>PAYMENT DETAILS</h1>
+			    <h2>Notes</h2>
+                <ul>
+                    <li>If this Form is signed by an attorney or other agent, the original or a certified copy of the authority of the attorney or agent must accompany this Form.</li>
+                    <li>A corporation should execute this Form under its common seal or sign by a duly authorised officer who should state his representative capacity.</li>
+                </ul>
+			    <h2>PAYMENT METHOD</h2>
+			    <input type="radio" id="paymentMethodCheque" name="paymentMethod" value="paymentMethodCheque" onclick="paymentMethodChanged();" checked />
+                <label for="paymentMethodCheque">
+                    Cheque or banker's draft
+                </label>
+                &nbsp;
+                <input type="radio" id="paymentMethodEft" name="paymentMethod" value="paymentMethodEft" onclick="paymentMethodChanged();" />
+                <label for="paymentMethodEft">
+                    Telegraph or electronic funds transfer (EFT)
+                </label>
+                <div id="paymentMethodChequeDiv" style="display:block;">
+                    <p>
+                        I / We attach herewith a cheque / banker's draft in the sum of:
+                    </p>
+                    <p>
+                        <div class="fancySelect" style="width: 70px;">
+                            <select id="paymentMethodChequeCurrency" name="paymentMethodChequeCurrency" style="width: 70px;">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </div>
+                        &nbsp;
+                        <input type="text" id="paymentMethodChequeAmount" name="paymentMethodChequeAmount" class="currency fancyInput required" size="8" maxlength="10" />
+                    </p>
+                    <p>
+                        being the amount due in respect of this application, made payable to the
+                        <b>Foord Asset Management (Guernsey) Limited Client</b> account.
+                    </p>
+                </div>
+                <div id="paymentMethodEftDiv" style="display:none;">
+                    <p>
+                        <input type="radio" id="paymentMethodEftCurrencyUsd" name="paymentMethodEftCurrency" value="paymentMethodEftCurrencyUsd" onclick="paymentMethodEftCurrencyChanged();" checked />
+                        <label for="paymentMethodEftCurrencyUsd">
+                            USD
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="paymentMethodEftCurrencyEur" name="paymentMethodEftCurrency" value="paymentMethodEftCurrencyEur" onclick="paymentMethodEftCurrencyChanged();" />
+                        <label for="paymentMethodEftCurrencyEur">
+                            EUR
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="paymentMethodEftCurrencyGbp" name="paymentMethodEftCurrency" value="paymentMethodEftCurrencyGbp" onclick="paymentMethodEftCurrencyChanged();" />
+                        <label for="paymentMethodEftCurrencyGbp">
+                            GBP
+                        </label>
+                        <div id="paymentMethodEftCurrencyUsdDiv" style="display:block;">
+                            <p>
+                                USD&nbsp;<input type="text" id="paymentMethodEftCurrencyUsdAmount" name="paymentMethodEftCurrencyUsdAmount" class="currency fancyInput required" size="8" maxlength="10" />
+                            </p>
+                            <p>
+                                <b>CORRESPONDENT BANK:</b> Deutsche Bank Trust, New York, Swift Code: BKTRUS33<br>
+                                <b>ACCOUNT DETAILS FOR BENEFICIARY BANK:</b> Royal Bank of Canada (Channel Islands) Limited, Swift Code: ROYCGGSP, Account number: 04-09-1210
+                            </p>
+                            <p>
+                                <b>FOR FURTHER CREDIT TO:</b> Foord Asset Management (Guernsey) Limited, Account number: 08790-5221494-SPAP
+                            </p>
+                        </div>
+                        <div id="paymentMethodEftCurrencyEurDiv" style="display:none;">
+                            <p>
+                                EUR&nbsp;<input type="text" id="paymentMethodEftCurrencyEurAmount" name="paymentMethodEftCurrencyEurAmount" class="currency fancyInput required" size="8" maxlength="10" />
+                            </p>
+                            <p>
+                                <b>CORRESPONDENT BANK:</b> HSBC Bank PLC, London, Swift Code: MIDLGB22<br>
+                                <b>ACCOUNT DETAILS FOR BENEFICIARY BANK:</b> Royal Bank of Canada (Channel Islands) Limited, Swift Code: ROYCGGSP, IBAN account number: GB29ROYC40487505221494
+                            </p>
+                            <p>
+                                <b>FOR FURTHER CREDIT TO:</b> Foord Asset Management (Guernsey) Limited, Account number: 08790-5221494-SPAP
+                            </p>
+                        </div>
+                        <div id="paymentMethodEftCurrencyGbpDiv" style="display:none;">
+                            <p>
+                                GBP&nbsp;<input type="text" id="paymentMethodEftCurrencyGbpAmount" name="paymentMethodEftCurrencyGbpAmount" class="currency fancyInput required" size="8" maxlength="10" />
+                            </p>
+                            <p>
+                                <input type="radio" id="paymentMethodEftCurrencyGbpFromUk" name="paymentMethodEftCurrencyGbpLocation" value="paymentMethodEftCurrencyGbpFromUk" onclick="paymentMethodEftCurrencyGbpLocationChanged();" checked />
+                                <label for="paymentMethodEftCurrencyGbpFromUk">
+                                    Transfer is from a UK account
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="paymentMethodEftCurrencyGbpOutsideUk" name="paymentMethodEftCurrencyGbpLocation" value="paymentMethodEftCurrencyGbpOutsideUk" onclick="paymentMethodEftCurrencyGbpLocationChanged();" />
+                                <label for="paymentMethodEftCurrencyGbpOutsideUk">
+                                    Transfer is from outside the UK
+                                </label>
+                                <div id="paymentMethodEftCurrencyGbpFromUkDiv" style="display:block;">
+                                    <p>
+                                        <b>ACCOUNT DETAILS FOR BENEFICIARY BANK:</b> Royal Bank of Canada (Channel Islands) Limited, Swift Code: ROYCGGSP, Sort Code: 40-48-75, IBAN account number: GB29ROYC40487505221478
+                                    </p>
+                                    <p>
+                                        <b>FOR FURTHER CREDIT TO:</b> Foord Asset Management (Guernsey) Limited, Account number: 08790-5221494-SPAP
+                                    </p>
+                                </div>
+                                <div id="paymentMethodEftCurrencyGbpOutsideUkDiv" style="display:none;">
+                                    <p>
+                                        <b>CORRESPONDENT BANK:</b> HSBC Bank PLC, London, Swift Code: MIDLGB22<br>
+                                        <b>ACCOUNT DETAILS FOR BENEFICIARY BANK:</b> Royal Bank of Canada (Channel Islands) Limited, Swift Code: ROYCGGSP, IBAN Account Number: GB29ROYC40487505221478
+                                    </p>
+                                    <p>
+                                        <b>FOR FURTHER CREDIT TO:</b> Foord Asset Management (Guernsey) Limited, Account number: 08790-5221494-SPAP
+                                    </p>
+                                </div>
+                            </p>
+                        </div>
+                        <p>
+                            Holder's Name:&nbsp;<input type="text" id="paymentMethodEftHolderName" name="paymentMethodEftHolderName" class="fancyInput required" size="30" maxlength="30" />
+                        </p>
+                    </p>
+                </div>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step3');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#internationalTopupForm').validate()" />
+                </p>
+            </div>
+			
+			<div id="step5" style="display: none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="activeStepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="activeStep">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<div>
+					<h1>FINAL STEPS</h1>
+                    <p>
+                        <ol>
+                            <li>Once you are satisfied that all fields have been completed accurately and have accepted all the terms and conditions below, click the <b>GENERATE FORM</b> button.</li>
+                            <li><b>Save</b> the compiled PDF document somewhere appropriate on your computer. You will also be emailed a copy.</li>
+                            <li><b>Print</b> the document and <b>sign</b> where required.</li>
+                            <li>South African investors should <b>fax</b> the form to Foord Unit Trusts on 021 532 6970 or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>, and <b>post</b> the original form to Foord Unit Trusts at PO Box 135, Howard Place, 7450. Foord will courier these documents to Guernsey.</li>
+                            <li>All other investors should <b>post</b> the original form to Foord Asset Management (Guernsey) Limited, PO Box 105, Trafalgar Court, Admiral Park, St Peter Port, Guernsey, Channel Islands, GY1 2HT.</li>
+                        </ol>
+                    </p>
+                    <h2>Notes:</h2>
+                    <p>
+                        <ul>
+                            <li>The Foord International Trust trades weekly. In order to comply with the Guernsey cut-off time of 16h00 GMT each Monday, instructions must reach Foord Unit Trusts by 14h00 on Friday.</li>
+                            <li>Guernsey regulations do not require investors to post original documents for a top up investment.</li>
+                            <li>International settlements can take up to 48 hours. In order to qualify for the Guernsey cut-off time, your deposit must have settled into the Guernsey bank accounts by 16h00 on a Monday.</li>
+                            <li>In order to effect an international transfer from South Africa, your bank will require a valid tax clearance certificate from you.</li>
+                            <li>Anti-money laundering regulations in Guernsey prohibit money transfers from third parties.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="fitInvestorDeclarations" name="fitInvestorDeclarations" onclick="termsConditionsChecked();" />
+                        <label for="fitInvestorDeclarations">
+                            I have read and agree to the <a href="FITInvestorDeclarations.html" class="fancyPopup">Investor Declarations, Undertakings and Instructions</a>
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="fitComplianceComplaints" name="fitComplianceComplaints" onclick="termsConditionsChecked();" />
+                        <label for="fitComplianceComplaints">
+                            I am aware of the <a href="FITComplianceComplaints.html" class="fancyPopup">Compliance And Complaints Policy</a>
+                        </label>
+                    </p>
+					<p class="paddedNavigationParagraph">
+						<input type="button" value="< BACK" onClick="showLayer('step4');" class="navigationInput" />&nbsp;&nbsp;<input id="generateFormInput" type="submit" value="GENERATE FORM" disabled class="compileFormDisabled" />
+					</p>
+				</div>
+			</div>
+			
+			<div id="step6" style="display: none;">
+                <div>
+                    <h1>THANK YOU</h1>
+                    <ul>
+                        <li>Your browser will download the compiled form shortly.</li>
+                        <li>The compiled form has been emailed to the supplied email address.</li>
+                    </ul>
+                </div>
+            </div>
+		</form>
+	</body>
+</html>

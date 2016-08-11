@@ -1,0 +1,2812 @@
+<!doctype html>
+<html>
+	<title></title>
+	<head>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		
+		<link rel="stylesheet" href="css/main.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/fonts.css" media="screen" type="text/css">
+	    <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" media="screen" type="text/css" />
+	    
+	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+        <script type="text/javascript" src="js/ApplicationForm.js"></script>
+        <script type="text/javascript" src="js/ApplicationFormOnLoad.js"></script>
+	</head>
+	<body>
+		<form id="applicationForm" name="applicationForm" action="ApplicationFormPDF.jsp" method="POST">
+		    <div id="step1" style="display:block;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="activeStepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="activeStep">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+		        <h1>HOW TO INVEST WITH FOORD</h1>
+                <p>
+                    <ol>
+                        <li><b>Complete</b> all relevant sections in this form, <b>print</b> it and <b>sign</b> where required. If you require any assistance, please call us on 021 531 5085.</li>
+                        <li><b>Fax</b> the form together with the required supporting documentation and proof of the deposit and a cancelled cheque or recent bank statement to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.</li>
+                        <li><b>Post</b> the original form and supporting documentation to Foord Unit Trusts at PO Box 135, Howard Place, 7450.</li>
+                        <li>Please note that the business cut-off time for receiving instructions is 14h00.</li>
+                    </ol>
+                </p>
+                <p class="paddedNavigationParagraph">
+                    <input type="submit" value="NEXT >" class="navigationInput" onclick="$('#applicationForm').validate()" />
+                </p>
+            </div>
+                
+			<div id="step2" style="display:none;">
+			    <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="activeStepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="activeStep">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<h1>INVESTMENT DETAILS</h1>
+				<p>
+					<h2>Notes</h2>
+					<ul>
+						<li>Fund minimums apply: initial lump sum of R50,000; monthly contribution of R1,000.</li>
+						<li>Enter either a lump sum OR monthly contribution OR both for at least one fund.</li>
+						<li>* This facility allows you to automatically increase your investment amount by a set percentage on each anniversary date.</li>
+						<li>** Should you elect to have your February and August distributions paid out, they will be paid out into the bank account specified in the Payout Account section. All distributions below R1,000 will be automatically re-invested.</li>
+					</ul>
+				</p>
+				<p>
+					Subject to the conditions of the relevant Trust Deeds, I hereby apply to purchase units in the following funds, at the ruling fund prices:
+				</p>
+				<table class="gridTable" cellspacing="0">
+					<tr>
+						<th>FUND NAME</th>
+						<th>LUMP SUM</th>
+						<th>MONTHLY</th>
+						<th>ANNUAL DEBIT<br>ORDER INCREASE *</th>
+						<th>DISTRIBUTIONS **</th>
+					</tr>
+					<tr>
+                        <td>
+                            Foord Conservative
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetConservativeLumpSum" name="invDetConservativeLumpSum" class="currency" size="6" maxlength="10" />
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetConservativeMonthlyAmount" name="invDetConservativeMonthlyAmount" class="currency" size="5" maxlength="10" />
+                        </td>
+                        <td>
+                            <input type="text" id="invDetConservativeAnnualDebitOrderIncrease" name="invDetConservativeAnnualDebitOrderIncrease" class="percentage" size="5" maxlength="3" />&nbsp;%
+                        </td>
+                        <td class="lowInputColumn">
+                            <input type="radio" id="conservativeReinvest" name="conservativeDistributions" style="background-color: #FFFFFF;" value="conservativeReinvest" checked />
+                            <label for="conservativeReinvest">
+                                Reinvest
+                            </label>
+                            <br>
+                            <input type="radio" id="conservativePayout" name="conservativeDistributions" style="background-color: #FFFFFF;" value="conservativePayout" />
+                            <label for="conservativePayout">
+                                Payout
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Foord Balanced
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetBalancedLumpSum" name="invDetBalancedLumpSum" class="currency" size="6" maxlength="10" />
+                        </td>
+                        <td>
+                            R&nbsp;<input type="text" id="invDetBalancedMonthlyAmount" name="invDetBalancedMonthlyAmount" class="currency" size="5" maxlength="10" />
+                        </td>
+                        <td>
+                            <input type="text" id="invDetBalancedAnnualDebitOrderIncrease" name="invDetBalancedAnnualDebitOrderIncrease" class="percentage" size="5" maxlength="3" />&nbsp;%
+                        </td>
+                        <td class="lowInputColumn">
+                            <input type="radio" id="balancedReinvest" name="balancedDistributions" style="background-color: #EEEEEE;" value="balancedReinvest" checked />
+                            <label for="balancedReinvest">
+                                Reinvest
+                            </label>
+                            <br>
+                            <input type="radio" id="balancedPayout" name="balancedDistributions" style="background-color: #EEEEEE;" value="balancedPayout" />
+                            <label for="balancedPayout">
+                                Payout
+                            </label>
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+							Foord Flexible FoF
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetFlexibleLumpSum" name="invDetFlexibleLumpSum" class="currency" size="6" maxlength="10" />
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetFlexibleMonthlyAmount" name="invDetFlexibleMonthlyAmount" class="currency" size="5" maxlength="10" />
+						</td>
+						<td>
+							<input type="text" id="invDetFlexibleAnnualDebitOrderIncrease" name="invDetFlexibleAnnualDebitOrderIncrease" class="percentage" size="5" maxlength="3" />&nbsp;%
+						</td>
+						<td>
+							<input type="radio" id="flexibleReinvest" name="flexibleDistributions" style="background-color: #FFFFFF;" value="flexibleReinvest" checked />
+							<label for="flexibleReinvest">
+								Reinvest
+							</label>
+							<br>
+							<input type="radio" id="flexiblePayout" name="flexibleDistributions" style="background-color: #FFFFFF;" value="flexiblePayout" />
+							<label for="flexiblePayout">
+								Payout
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Foord Equity
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetEquityLumpSum" name="invDetEquityLumpSum" class="currency" size="6" maxlength="10" />
+						</td>
+						<td>
+							R&nbsp;<input type="text" id="invDetEquityMonthlyAmount" name="invDetEquityMonthlyAmount" class="currency" size="5" maxlength="10" />
+						</td>
+						<td>
+							<input type="text" id="invDetEquityAnnualDebitOrderIncrease" name="invDetEquityAnnualDebitOrderIncrease" class="percentage" size="5" maxlength="3" />&nbsp;%
+						</td>
+						<td class="lowInputColumn">
+							<input type="radio" id="equityReinvest" name="equityDistributions" style="background-color: #FFFFFF;" value="equityReinvest" checked />
+							<label for="equityReinvest">
+								Reinvest
+							</label>
+							<br>
+							<input type="radio" id="equityPayout" name="equityDistributions" style="background-color: #FFFFFF;" value="equityPayout" />
+							<label for="equityPayout">
+								Payout
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Foord International<br>Feeder
+						</td>
+						<td colspan=4 style="color: #ff0000; text-align: center;">
+						    CLOSED
+						</td>
+					</tr>
+					<tr>
+                        <td>
+                            Foord Global Equity<br>Feeder
+                        </td>
+                        <td colspan=4 style="color: #ff0000; text-align: center;">
+                            CLOSED
+                        </td>
+                    </tr>
+				</table>
+				<p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step1');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#applicationForm').validate()" />
+                </p>
+			</div>
+				
+			<div id="step3" style="display:none;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="activeStepHeading">INVESTOR DETAILS</td>
+                           <td class="stepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="activeStep">STEP 03</td>
+                            <td class="step">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+				<div>
+					<h1>INVESTOR DETAILS</h1>
+					<h2>STATUS</h2>
+					<input type="radio" id="naturalPerson" name="status" value="naturalPerson" onclick="statusChanged();" checked />
+					<label for="naturalPerson">
+						Natural Person(s)
+					</label>
+					&nbsp;
+					<input type="radio" id="legalEntity" name="status" value="legalEntity" onclick="statusChanged();" />
+					<label for="legalEntity">
+						Legal Entity, Partnerships and Trusts
+					</label>
+				</div>
+				<div id="naturalPersonDiv" style="display:block;">
+					<p>
+						<h2>CAPACITY</h2>
+						<input type="radio" id="singleInvestor" name="capacity" value="singleInvestor" checked onclick="capacityChanged();" />
+						<label for="singleInvestor">
+							Single Investor
+						</label>
+						&nbsp;
+						<input type="radio" id="jointNameInvestor" name="capacity" value="jointNameInvestor" onclick="capacityChanged();" />
+						<label for="jointNameInvestor">
+							Joint name investors&nbsp;<img src="img/tooltip_darkgrey.png" class="joint" style="vertical-align:text-bottom;" />
+						</label>
+						&nbsp;
+						<input type="radio" id="personActingOnBehalf" name="capacity" value="personActingOnBehalf" onclick="capacityChanged();" />
+						<label for="personActingOnBehalf">
+							Person acting on behalf of an investor&nbsp;<img src="img/tooltip_darkgrey.png" class="onbehalf" style="vertical-align:text-bottom;" />
+						</label>
+					</p>
+					<div id="naturalPersonJointNameDiv" style="display:none;">
+						<input type="radio" id="allInvestorsSign" name="investorsToSign" value="allInvestorsSign" checked />
+						<label for="allInvestorsSign">
+							All investors must sign future instructions
+						</label>
+						&nbsp;
+						<input type="radio" id="anyInvestorSign" name="investorsToSign" value="anyInvestorSign" />
+						<label for="anyInvestorSign">
+							Any investor may sign future instructions
+						</label>
+					</div>
+					<h2 id="investorH">INVESTOR</h2>
+					<table class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+								TITLE
+							</td>
+							<td class="inputColumn">
+							    <div class="fancySelect">
+								    <select id="naturalPersonTitle" name="naturalPersonTitle"></select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								FIRST NAME(S)
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonFirstNames" name="naturalPersonFirstNames" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								SURNAME
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonSurname" name="naturalPersonSurname" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                                SA IDENTITY NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonSaIdNumber" name="naturalPersonSaIdNumber" maxlength="13" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                NATIONALITY
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="naturalPersonNationality" name="naturalPersonNationality" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ADDITIONAL NATIONALITIES
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonAdditionalNationalities" name="naturalPersonAdditionalNationalities" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FOREIGN PASSPORT NUMBERS
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonForeignPassportNumbers" name="naturalPersonForeignPassportNumbers" maxlength="30" />
+                            </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+								DATE OF BIRTH
+							</td>
+							<td class="inputColumn">
+                                <div class="fancySelect" style="width: 70px;">
+                                    <select id="naturalPersonDobDay" name="naturalPersonDobDay" class="selectDay"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 100px;">
+                                    <select id="naturalPersonDobMonth" name="naturalPersonDobMonth" class="selectMonth"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 80px;">
+                                    <select id="naturalPersonDobYear" name="naturalPersonDobYear" class="selectYear"></select>
+                                </div>
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                                COUNTRY OF BIRTH
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="naturalPersonCountryOfBirth" name="naturalPersonCountryOfBirth" maxlength="30" />
+                            </td>
+                        </tr>
+						<tr>
+                            <td class="labelColumnWide">
+                                OCCUPATION
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonOccupation" name="naturalPersonOccupation" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                GENDER
+                            </td>
+                            <td class="required">
+	                            <input type="radio" id="naturalPersonGenderMale" name="naturalPersonGender" value="naturalPersonGenderMale" />
+	                            <label for="naturalPersonGenderMale">
+	                                Male
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPersonGenderFemale" name="naturalPersonGender" value="naturalPersonGenderFemale" />
+	                            <label for="naturalPersonGenderFemale">
+	                                Female
+	                            </label>
+	                        </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+								RESIDENTIAL ADDRESS
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonAddress1" name="naturalPersonAddress1" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonAddress2" name="naturalPersonAddress2" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="naturalPersonAddress3" name="naturalPersonAddress3" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonCountry" name="naturalPersonCountry" maxlength="30" />
+                            </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL CODE
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonAddress4" name="naturalPersonAddress4" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								Postal address same as residential address?
+							</td>
+							<td>
+								<input type="checkbox" id="naturalPersonPostalAddressSame" name="naturalPersonPostalAddressSame" onclick="naturalPersonPostalSameAsResidentialChanged();" />
+							</td>
+						</tr>
+					</table>
+					<table id="naturalPersonPostalAddressTable" class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL ADDRESS
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonPostalAddress1" name="naturalPersonPostalAddress1" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonPostalAddress2" name="naturalPersonPostalAddress2" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="naturalPersonPostalAddress3" name="naturalPersonPostalAddress3" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="naturalPersonPostalCountry" name="naturalPersonPostalCountry" maxlength="30" />
+                            </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL CODE
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonPostalAddress4" name="naturalPersonPostalAddress4" maxlength="30" />
+							</td>
+						</tr>
+					</table>
+					<table class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+								MOBILE NUMBER
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonContactNumber" name="naturalPersonContactNumber" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								ALTERNATE CONTACT NUMBER
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="naturalPersonAlternateContactNumber" name="naturalPersonAlternateContactNumber" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								FAX NUMBER
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="naturalPersonFaxNumber" name="naturalPersonFaxNumber" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								EMAIL ADDRESS
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="naturalPersonEmailAddress" name="naturalPersonEmailAddress" maxlength="50" />
+							</td>
+						</tr>
+					</table>
+					<p>
+						<p>
+							<b>Investment statement communication preference</b>
+						</p>
+						<p>
+							<input type="radio" id="naturalPersonCommStatementsPost" name="naturalPersonCommStatements" value="naturalPersonCommStatementsPost" onclick="naturalPersonCommStatementsChanged();" />
+							<label for="naturalPersonCommStatementsPost">
+								POST (quarterly)
+							</label>
+							<br>
+							<input type="radio" id="naturalPersonCommStatementsEmail" name="naturalPersonCommStatements" value="naturalPersonCommStatementsEmail" onclick="naturalPersonCommStatementsChanged();" checked />
+							<label for="naturalPersonCommStatementsEmail">
+								E-MAIL
+							</label>
+							&nbsp;
+							<input type="radio" id="naturalPersonCommStatementsEmailWeekly" name="naturalPersonCommStatementsEmailFrequency" value="naturalPersonCommStatementsEmailWeekly" />
+							<label for="naturalPersonCommStatementsEmailWeekly">
+								Weekly
+							</label>
+							&nbsp;
+							<input type="radio" id="naturalPersonCommStatementsEmailMonthly" name="naturalPersonCommStatementsEmailFrequency" value="naturalPersonCommStatementsEmailMonthly" checked />
+							<label for="naturalPersonCommStatementsEmailMonthly">
+								Monthly
+							</label>
+							&nbsp;
+							<input type="radio" id="naturalPersonCommStatementsEmailQuarterly" name="naturalPersonCommStatementsEmailFrequency" value="naturalPersonCommStatementsEmailQuarterly" />
+							<label for="naturalPersonCommStatementsEmailQuarterly">
+								Quarterly
+							</label>
+						</p>
+					</p>
+					<p>
+                        <p>
+                            <b>Quarterly newsletter communication preference</b>
+                        </p>
+                        <p>
+                            <input type="radio" id="naturalPersonCommNewsletterPost" name="naturalPersonCommNewsletter" value="naturalPersonCommNewsletterPost" checked />
+                            <label for="naturalPersonCommNewsletterPost">
+                                POST
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="naturalPersonCommNewsletterEmail" name="naturalPersonCommNewsletter" value="naturalPersonCommNewsletterEmail" />
+                            <label for="naturalPersonCommNewsletterEmail">
+                                E-MAIL
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="naturalPersonCommNewsletterBoth" name="naturalPersonCommNewsletter" value="naturalPersonCommNewsletterBoth" />
+                            <label for="naturalPersonCommNewsletterBoth">
+                                BOTH
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="naturalPersonCommNewsletterNone" name="naturalPersonCommNewsletter" value="naturalPersonCommNewsletterNone" />
+                            <label for="naturalPersonCommNewsletterNone">
+                                NONE
+                            </label>
+                        </p>
+                    </p>
+					<p>
+	                    <h2>TAX STATUS</h2>
+	                    
+	                    <p>
+                            Foord Unit Trusts (RF) (Pty) Ltd is compelled to comply with the reporting requirements of the South African Revenue Service (SARS) in relation to Automatic Exchange of Information.
+                        </p>
+	                    
+	                    <p>
+	                        Are you eligible for a reduction of dividends tax withheld on distributions? If YES, please complete the additional form: <a href="http://sfs.foord.co.za/Shared%20Documents/Application%20Forms/Dividends%20Tax%20Exemption%20Form.pdf" target="_blank">Dividends Tax Exemption Form</a> and <b>fax</b> it to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.<br> 
+	                        &nbsp;&nbsp;
+	                        <input type="radio" id="naturalPersonTaxReductionYes" name="naturalPersonTaxReduction" value="naturalPersonTaxReductionYes" />
+	                        <label for="naturalPersonTaxReductionYes">
+	                            YES
+	                        </label>
+	                        &nbsp;
+	                        <input type="radio" id="naturalPersonTaxReductionNo" name="naturalPersonTaxReduction" value="naturalPersonTaxReductionNo" checked />
+	                        <label for="naturalPersonTaxReductionNo">
+	                            NO
+	                        </label>
+	                    </p>
+	                    
+	                    <p>
+	                        NOTE: Distributions from a Real Estate Investment Trust ("REIT") are regarded as taxable local dividends and are subject to tax at your marginal tax rate. However, these dividends will be exempt from dividends tax.
+	                    </p>
+	                    
+	                    <p>
+	                        Are you resident in South Africa for the purposes of South African income tax?<br> 
+	                        &nbsp;&nbsp;
+	                        <input type="radio" id="naturalPersonTaxSaResidentYes" name="naturalPersonTaxSaResident" value="naturalPersonTaxSaResidentYes" onclick="naturalPersonTaxSaResidentChanged();" checked />
+	                        <label for="naturalPersonTaxSaResidentYes">
+	                            YES
+	                        </label>
+	                        &nbsp;
+	                        <input type="radio" id="naturalPersonTaxSaResidentNo" name="naturalPersonTaxSaResident" value="naturalPersonTaxSaResidentNo" onclick="naturalPersonTaxSaResidentChanged();" />
+	                        <label for="naturalPersonTaxSaResidentNo">
+	                            NO
+	                        </label>
+	                        
+	                        <table class="formTable" id="naturalPersonSaIncomeTaxNumberTable">
+		                        <tr>
+		                            <td class="labelColumnWide">
+		                                SA INCOME TAX NUMBER
+		                            </td>
+		                            <td class="inputColumn required">
+		                                <input type="text" id="naturalPersonSaIncomeTaxNumber" name="naturalPersonSaIncomeTaxNumber" maxlength="13" />
+		                            </td>
+		                        </tr>
+		                    </table>
+	                    </p>
+	                    
+	                    <p>
+	                        Are you subject to taxation in any other country or jurisdiction?<br>
+	                        &nbsp;&nbsp;
+	                        <input type="radio" id="naturalPersonTaxOtherCountryYes" name="naturalPersonTaxOtherCountry" value="naturalPersonTaxOtherCountryYes" onclick="naturalPersonTaxOtherCountryChanged();" />
+	                        <label for="naturalPersonTaxOtherCountryYes">
+	                            YES
+	                        </label>
+	                        &nbsp;
+	                        <input type="radio" id="naturalPersonTaxOtherCountryNo" name="naturalPersonTaxOtherCountry" value="naturalPersonTaxOtherCountryNo" checked onclick="naturalPersonTaxOtherCountryChanged();" />
+	                        <label for="naturalPersonTaxOtherCountryNo">
+	                            NO
+	                        </label>
+	                    </p>
+	                    
+	                    <table class="formTable" id="naturalPersonForeignTaxTable" style="display: none;">
+                            <tr>
+                                <td class="labelColumnWide">
+                                    NAMES OF FOREIGN COUNTRIES
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPersonTaxForeignCountries" name="naturalPersonTaxForeignCountries" />
+                                </td>
+                            </tr>
+                            <tr>
+                               <td class="labelColumnWide">
+                                   FOREIGN TAX NUMBERS
+                               </td>
+                               <td class="inputColumn required">
+                                   <input type="text" id="naturalPersonTaxForeignTaxNumbers" name="naturalPersonTaxForeignTaxNumbers" maxlength="30" />
+                               </td>
+                             </tr>
+                         </table>
+	                </p>
+	                <p>
+                        <h2>PUBLIC OFFICE (POLITCALLY EXPOSED PERSONS)</h2>
+                        
+                        <p>
+                            A politically exposed person (PEP) is defined by the Financial Action Task Force (FATF) as an individual who is a prominent public figure or has been entrusted with a prominent public function (e.g., heads of state or of government, senior politicians, senior government, judicial or military officials, senior executives of stateowned corporations, important political party officials).
+                        </p>
+                        
+                        <p>
+                            Are you a PEP (based on the above definition) and/or are you related to a PEP? 
+                            &nbsp;&nbsp;
+                            <input type="radio" id="naturalPersonPepYes" name="naturalPersonPep" value="naturalPersonPepYes" onclick="naturalPersonPepChanged();" />
+                            <label for="naturalPersonPepYes">
+                                YES
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="naturalPersonPepNo" name="naturalPersonPep" value="naturalPersonPepNo" checked onclick="naturalPersonPepChanged();" />
+                            <label for="naturalPersonPepNo">
+                                NO
+                            </label>
+                            
+                            <table class="formTable" id="naturalPersonPepTable" style="display: none;">
+                                <tr>
+                                    <td class="labelColumnWide">
+                                        DETAILS
+                                    </td>
+                                    <td class="inputColumn required">
+                                        <input type="text" id="naturalPersonPepDetails" name="naturalPersonPepDetails" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+                    </p>
+	                
+					<div id="jointInvestor2Div" style="display:none;">
+						<h2>JOINT INVESTOR 2</h2>
+						<table class="formTable">
+							<tr>
+								<td class="labelColumnWide">
+									TITLE
+								</td>
+								<td class="inputColumn">
+								    <div class="fancySelect">
+									   <select id="naturalPerson2Title" name="naturalPerson2Title"></select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+									FIRST NAME(S)
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2FirstNames" name="naturalPerson2FirstNames" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+									SURNAME
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2Surname" name="naturalPerson2Surname" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+	                            <td class="labelColumnWide">
+	                                SA IDENTITY NUMBER
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2SaIdNumber" name="naturalPerson2SaIdNumber" maxlength="13" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                NATIONALITY
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson2Nationality" name="naturalPerson2Nationality" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                ADDITIONAL NATIONALITIES
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2AdditionalNationalities" name="naturalPerson2AdditionalNationalities" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                FOREIGN PASSPORT NUMBERS
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2ForeignPassportNumbers" name="naturalPerson2ForeignPassportNumbers" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                DATE OF BIRTH
+	                            </td>
+	                            <td class="inputColumn">
+	                                <div class="fancySelect" style="width: 70px;">
+	                                    <select id="naturalPerson2DobDay" name="naturalPerson2DobDay" class="selectDay"></select>
+	                                </div>
+	                                <div class="fancySelect" style="width: 100px;">
+	                                    <select id="naturalPerson2DobMonth" name="naturalPerson2DobMonth" class="selectMonth"></select>
+	                                </div>
+	                                <div class="fancySelect" style="width: 80px;">
+	                                    <select id="naturalPerson2DobYear" name="naturalPerson2DobYear" class="selectYear"></select>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                COUNTRY OF BIRTH
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson2CountryOfBirth" name="naturalPerson2CountryOfBirth" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                OCCUPATION
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2Occupation" name="naturalPerson2Occupation" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                GENDER
+	                            </td>
+	                            <td class="required">
+	                                <input type="radio" id="naturalPerson2GenderMale" name="naturalPerson2Gender" value="naturalPerson2GenderMale" />
+	                                <label for="naturalPerson2GenderMale">
+	                                    Male
+	                                </label>
+	                                &nbsp;
+	                                <input type="radio" id="naturalPerson2GenderFemale" name="naturalPerson2Gender" value="naturalPerson2GenderFemale" />
+	                                <label for="naturalPerson2GenderFemale">
+	                                    Female
+	                                </label>
+	                            </td>
+	                        </tr>
+							<tr>
+								<td class="labelColumnWide">
+									RESIDENTIAL ADDRESS
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2Address1" name="naturalPerson2Address1" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2Address2" name="naturalPerson2Address2" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+								</td>
+								<td class="inputColumn">
+									<input type="text" id="naturalPerson2Address3" name="naturalPerson2Address3" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+	                            <td class="labelColumnWide">
+	                                COUNTRY
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2Country" name="naturalPerson2Country" maxlength="30" />
+	                            </td>
+	                        </tr>
+							<tr>
+								<td class="labelColumnWide">
+									POSTAL CODE
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2Address4" name="naturalPerson2Address4" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+									Postal address same as residential address?
+								</td>
+								<td>
+									<input type="checkbox" id="naturalPerson2PostalAddressSame" name="naturalPerson2PostalAddressSame" onclick="naturalPerson2PostalSameAsResidentialChanged();" />
+								</td>
+							</tr>
+						</table>
+						<table id="naturalPerson2PostalAddressTable" class="formTable">
+							<tr>
+								<td class="labelColumnWide">
+									POSTAL ADDRESS
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2PostalAddress1" name="naturalPerson2PostalAddress1" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2PostalAddress2" name="naturalPerson2PostalAddress2" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+								</td>
+								<td class="inputColumn">
+									<input type="text" id="naturalPerson2PostalAddress3" name="naturalPerson2PostalAddress3" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+	                            <td class="labelColumnWide">
+	                                COUNTRY
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2PostalCountry" name="naturalPerson2PostalCountry" maxlength="30" />
+	                            </td>
+	                        </tr>
+							<tr>
+								<td class="labelColumnWide">
+									POSTAL CODE
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2PostalAddress4" name="naturalPerson2PostalAddress4" maxlength="30" />
+								</td>
+							</tr>
+						</table>
+						<table class="formTable">
+							<tr>
+	                            <td class="labelColumnWide">
+	                                CONTACT NUMBER
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson2ContactNumber" name="naturalPerson2ContactNumber" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                ALTERNATE CONTACT NUMBER
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson2AlternateContactNumber" name="naturalPerson2AlternateContactNumber" maxlength="30" />
+	                            </td>
+	                        </tr>
+							<tr>
+								<td class="labelColumnWide">
+									FAX NUMBER
+								</td>
+								<td class="inputColumn">
+									<input type="text" id="naturalPerson2FaxNumber" name="naturalPerson2FaxNumber" maxlength="30" />
+								</td>
+							</tr>
+							<tr>
+								<td class="labelColumnWide">
+									EMAIL ADDRESS
+								</td>
+								<td class="inputColumn required">
+									<input type="text" id="naturalPerson2EmailAddress" name="naturalPerson2EmailAddress" maxlength="50" />
+								</td>
+							</tr>
+						</table>
+						<p>
+	                        <p>
+	                            <b>Investment statement communication preference</b>
+	                        </p>
+	                        <p>
+	                            <input type="radio" id="naturalPerson2CommStatementsPost" name="naturalPerson2CommStatements" value="naturalPerson2CommStatementsPost" onclick="naturalPerson2CommStatementsChanged();" />
+	                            <label for="naturalPerson2CommStatementsPost">
+	                                POST (quarterly)
+	                            </label>
+	                            <br>
+	                            <input type="radio" id="naturalPerson2CommStatementsEmail" name="naturalPerson2CommStatements" value="naturalPerson2CommStatementsEmail" onclick="naturalPerson2CommStatementsChanged();" checked />
+	                            <label for="naturalPerson2CommStatementsEmail">
+	                                E-MAIL
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommStatementsEmailWeekly" name="naturalPerson2CommStatementsEmailFrequency" value="naturalPerson2CommStatementsEmailWeekly" />
+	                            <label for="naturalPerson2CommStatementsEmailWeekly">
+	                                Weekly
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommStatementsEmailMonthly" name="naturalPerson2CommStatementsEmailFrequency" value="naturalPerson2CommStatementsEmailMonthly" checked />
+	                            <label for="naturalPerson2CommStatementsEmailMonthly">
+	                                Monthly
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommStatementsEmailQuarterly" name="naturalPerson2CommStatementsEmailFrequency" value="naturalPerson2CommStatementsEmailQuarterly" />
+	                            <label for="naturalPerson2CommStatementsEmailQuarterly">
+	                                Quarterly
+	                            </label>
+	                        </p>
+	                    </p>
+	                    <p>
+	                        <p>
+	                            <b>Quarterly newsletter communication preference</b>
+	                        </p>
+	                        <p>
+	                            <input type="radio" id="naturalPerson2CommNewsletterPost" name="naturalPerson2CommNewsletter" value="naturalPerson2CommNewsletterPost" checked />
+	                            <label for="naturalPerson2CommNewsletterPost">
+	                                POST
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommNewsletterEmail" name="naturalPerson2CommNewsletter" value="naturalPerson2CommNewsletterEmail" />
+	                            <label for="naturalPerson2CommNewsletterEmail">
+	                                E-MAIL
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommNewsletterBoth" name="naturalPersonComm2Newsletter" value="naturalPerson2CommNewsletterBoth" />
+	                            <label for="naturalPerson2CommNewsletterBoth">
+	                                BOTH
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2CommNewsletterNone" name="naturalPersonComm2Newsletter" value="naturalPerson2CommNewsletterNone" />
+	                            <label for="naturalPerson2CommNewsletterNone">
+	                                NONE
+	                            </label>
+	                        </p>
+	                    </p>
+						<p>
+	                        <h2>TAX STATUS</h2>
+	                        
+	                        <p>
+                                Foord Unit Trusts (RF) (Pty) Ltd is compelled to comply with the reporting requirements of the South African Revenue Service (SARS) in relation to Automatic Exchange of Information.
+                            </p>
+	                        
+	                        <p>
+	                            Are you eligible for a reduction of dividends tax withheld on distributions? If YES, please complete the additional form: <a href="http://sfs.foord.co.za/Shared%20Documents/Application%20Forms/Dividends%20Tax%20Exemption%20Form.pdf" target="_blank">Dividends Tax Exemption Form</a> and <b>fax</b> it to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.<br> 
+	                            &nbsp;&nbsp;
+	                            <input type="radio" id="naturalPerson2TaxReductionYes" name="naturalPerson2TaxReduction" value="naturalPerson2TaxReductionYes" />
+	                            <label for="naturalPerson2TaxReductionYes">
+	                                YES
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2TaxReductionNo" name="naturalPerson2TaxReduction" value="naturalPerson2TaxReductionNo" checked />
+	                            <label for="naturalPerson2TaxReductionNo">
+	                                NO
+	                            </label>
+	                        </p>
+	                        
+	                        <p>
+	                            Are you resident in South Africa for the purposes of South African income tax?<br> 
+	                            &nbsp;&nbsp;
+	                            <input type="radio" id="naturalPerson2TaxSaResidentYes" name="naturalPerson2TaxSaResident" value="naturalPerson2TaxSaResidentYes" onclick="naturalPerson2TaxSaResidentChanged();" />
+	                            <label for="naturalPerson2TaxSaResidentYes">
+	                                YES
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2TaxSaResidentNo" name="naturalPerson2TaxSaResident" value="naturalPerson2TaxSaResidentNo" checked onclick="naturalPerson2TaxSaResidentChanged();" />
+	                            <label for="naturalPerson2TaxSaResidentNo">
+	                                NO
+	                            </label>
+	                            
+	                            <table class="formTable" id="naturalPerson2SaIncomeTaxNumberTable" style="display: none;">
+	                                <tr>
+	                                    <td class="labelColumnWide">
+	                                        SA INCOME TAX NUMBER
+	                                    </td>
+	                                    <td class="inputColumn required">
+	                                        <input type="text" id="naturalPerson2SaIncomeTaxNumber" name="naturalPerson2SaIncomeTaxNumber" maxlength="13" />
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </p>
+	                        
+	                        <p>
+	                            Are you subject to taxation in any other country or jurisdiction?<br> 
+	                            &nbsp;&nbsp;
+	                            <input type="radio" id="naturalPerson2TaxOtherCountryYes" name="naturalPerson2TaxOtherCountry" value="naturalPerson2TaxOtherCountryYes" onclick="naturalPerson2TaxOtherCountryChanged();" />
+	                            <label for="naturalPerson2TaxOtherCountryYes">
+	                                YES
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2TaxOtherCountryNo" name="naturalPerson2TaxOtherCountry" value="naturalPerson2TaxOtherCountryNo" checked onclick="naturalPerson2TaxOtherCountryChanged();" />
+	                            <label for="naturalPerson2TaxOtherCountryNo">
+	                                NO
+	                            </label>
+	                        </p>
+	                        
+	                        <table class="formTable" id="naturalPerson2ForeignTaxTable" style="display: none;">
+	                               <tr>
+	                                   <td class="labelColumnWide">
+	                                       NAMES OF FOREIGN COUNTRIES
+	                                   </td>
+	                                   <td class="inputColumn required">
+	                                       <input type="text" id="naturalPerson2TaxForeignCountries" name="naturalPerson2TaxForeignCountries" />
+	                                   </td>
+	                               </tr>
+	                               <tr>
+	                                   <td class="labelColumnWide">
+	                                       FOREIGN TAX NUMBERS
+	                                   </td>
+	                                   <td class="inputColumn required">
+	                                       <input type="text" id="naturalPerson2TaxForeignTaxNumbers" name="naturalPerson2TaxForeignTaxNumbers" maxlength="30" />
+	                                   </td>
+	                               </tr>
+	                           </table>
+	                    </p>
+	                    <p>
+	                        <h2>PUBLIC OFFICE (POLITCALLY EXPOSED PERSONS)</h2>
+	                        
+	                        <p>
+	                            A politically exposed person (PEP) is defined by the Financial Action Task Force (FATF) as an individual who is or has been entrusted with a prominent public function. (e.g., Heads of State or of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials).</p>
+	                        </p>
+	                        
+	                        <p>
+	                            Are you a PEP (based on the above definition) and/or are you related to a PEP? 
+	                            &nbsp;&nbsp;
+	                            <input type="radio" id="naturalPerson2PepYes" name="naturalPerson2Pep" value="naturalPerson2PepYes" onclick="naturalPerson2PepChanged();" />
+	                            <label for="naturalPerson2PepYes">
+	                                YES
+	                            </label>
+	                            &nbsp;
+	                            <input type="radio" id="naturalPerson2PepNo" name="naturalPerson2Pep" value="naturalPerson2PepNo" checked  onclick="naturalPerson2PepChanged();" />
+	                            <label for="naturalPerson2PepNo">
+	                                NO
+	                            </label>
+	                            
+	                            <table class="formTable" id="naturalPerson2PepTable" style="display: none;">
+	                                <tr>
+	                                    <td class="labelColumnWide">
+	                                        DETAILS
+	                                    </td>
+	                                    <td class="inputColumn required">
+	                                        <input type="text" id="naturalPerson2PepDetails" name="naturalPerson2PepDetails" />
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </p>
+	                    </p>
+	                    
+						<h2>JOINT INVESTOR 3 <input type="checkbox" id="jointInvestor3" name="jointInvestor3" onclick="jointInvestor3Changed();" /></h2>
+					</div>
+					
+					<div id="jointInvestor3Div" style="display:none;">
+                        <table class="formTable">
+                            <tr>
+                                <td class="labelColumnWide">
+                                    TITLE
+                                </td>
+                                <td class="inputColumn">
+                                    <div class="fancySelect">
+                                        <select id="naturalPerson3Title" name="naturalPerson3Title"></select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    FIRST NAME(S)
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3FirstNames" name="naturalPerson3FirstNames" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    SURNAME
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3Surname" name="naturalPerson3Surname" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+	                            <td class="labelColumnWide">
+	                                SA IDENTITY NUMBER
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson3SaIdNumber" name="naturalPerson3SaIdNumber" maxlength="13" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                NATIONALITY
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson3Nationality" name="naturalPerson3Nationality" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                ADDITIONAL NATIONALITIES
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson3AdditionalNationalities" name="naturalPerson3AdditionalNationalities" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                FOREIGN PASSPORT NUMBERS
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson3ForeignPassportNumbers" name="naturalPerson3ForeignPassportNumbers" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                DATE OF BIRTH
+	                            </td>
+	                            <td class="inputColumn">
+	                                <div class="fancySelect" style="width: 70px;">
+	                                    <select id="naturalPerson3DobDay" name="naturalPerson3DobDay" class="selectDay"></select>
+	                                </div>
+	                                <div class="fancySelect" style="width: 100px;">
+	                                    <select id="naturalPerson3DobMonth" name="naturalPerson3DobMonth" class="selectMonth"></select>
+	                                </div>
+	                                <div class="fancySelect" style="width: 80px;">
+	                                    <select id="naturalPerson3DobYear" name="naturalPerson3DobYear" class="selectYear"></select>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                COUNTRY OF BIRTH
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson3CountryOfBirth" name="naturalPerson3CountryOfBirth" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                OCCUPATION
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson3Occupation" name="naturalPerson3Occupation" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                GENDER
+	                            </td>
+	                            <td class="required">
+	                                <input type="radio" id="naturalPerson3GenderMale" name="naturalPerson3Gender" value="naturalPerson3GenderMale" />
+	                                <label for="naturalPerson3GenderMale">
+	                                    Male
+	                                </label>
+	                                &nbsp;
+	                                <input type="radio" id="naturalPerson3GenderFemale" name="naturalPerson3Gender" value="naturalPerson3GenderFemale" />
+	                                <label for="naturalPerson3GenderFemale">
+	                                    Female
+	                                </label>
+	                            </td>
+	                        </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    RESIDENTIAL ADDRESS
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3Address1" name="naturalPerson3Address1" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3Address2" name="naturalPerson3Address2" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                </td>
+                                <td class="inputColumn">
+                                    <input type="text" id="naturalPerson3Address3" name="naturalPerson3Address3" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    COUNTRY
+                                </td>
+                                <td class="inputColumn">
+                                    <input type="text" id="naturalPerson3Country" name="naturalPerson3Country" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    POSTAL CODE
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3Address4" name="naturalPerson3Address4" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    Postal address same as residential address?
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="naturalPerson3PostalAddressSame" name="naturalPerson3PostalAddressSame" onclick="naturalPerson3PostalSameAsResidentialChanged()" />
+                                </td>
+                            </tr>
+                        </table>
+                        <table id="naturalPerson3PostalAddressTable" class="formTable">
+                            <tr>
+                                <td class="labelColumnWide">
+                                    POSTAL ADDRESS
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3PostalAddress1" name="naturalPerson3PostalAddress1" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3PostalAddress2" name="naturalPerson3PostalAddress2" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                </td>
+                                <td class="inputColumn">
+                                    <input type="text" id="naturalPerson3PostalAddress3" name="naturalPerson3PostalAddress3" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    COUNTRY
+                                </td>
+                                <td class="inputColumn">
+                                    <input type="text" id="naturalPerson3PostalCountry" name="naturalPerson3PostalCountry" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    POSTAL CODE
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3PostalAddress4" name="naturalPerson3PostalAddress4" maxlength="30" />
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="formTable">
+                            <tr>
+	                            <td class="labelColumnWide">
+	                                CONTACT NUMBER
+	                            </td>
+	                            <td class="inputColumn required">
+	                                <input type="text" id="naturalPerson3ContactNumber" name="naturalPerson3ContactNumber" maxlength="30" />
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="labelColumnWide">
+	                                ALTERNATE CONTACT NUMBER
+	                            </td>
+	                            <td class="inputColumn">
+	                                <input type="text" id="naturalPerson3AlternateContactNumber" name="naturalPerson3AlternateContactNumber" maxlength="30" />
+	                            </td>
+	                        </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    FAX NUMBER
+                                </td>
+                                <td class="inputColumn">
+                                    <input type="text" id="naturalPerson3FaxNumber" name="naturalPerson3FaxNumber" maxlength="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="labelColumnWide">
+                                    EMAIL ADDRESS
+                                </td>
+                                <td class="inputColumn required">
+                                    <input type="text" id="naturalPerson3EmailAddress" name="naturalPerson3EmailAddress" maxlength="50" />
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <p>
+                                <b>Investment statement communication preference</b>
+                            </p>
+                            <p>
+                                <input type="radio" id="naturalPerson3CommStatementsPost" name="naturalPerson3CommStatements" value="naturalPerson3CommStatementsPost" onclick="naturalPerson3CommStatementsChanged();" />
+                                <label for="naturalPerson3CommStatementsPost">
+                                    POST (quarterly)
+                                </label>
+                                <br>
+                                <input type="radio" id="naturalPerson3CommStatementsEmail" name="naturalPerson3CommStatements" value="naturalPerson3CommStatementsEmail" onclick="naturalPerson3CommStatementsChanged();" checked />
+                                <label for="naturalPerson3CommStatementsEmail">
+                                    E-MAIL
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommStatementsEmailWeekly" name="naturalPerson3CommStatementsEmailFrequency" value="naturalPerson3CommStatementsEmailWeekly" />
+                                <label for="naturalPerson3CommStatementsEmailWeekly">
+                                    Weekly
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommStatementsEmailMonthly" name="naturalPerson3CommStatementsEmailFrequency" value="naturalPerson3CommStatementsEmailMonthly" checked />
+                                <label for="naturalPerson3CommStatementsEmailMonthly">
+                                    Monthly
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommStatementsEmailQuarterly" name="naturalPerson3CommStatementsEmailFrequency" value="naturalPerson3CommStatementsEmailQuarterly" />
+                                <label for="naturalPerson3CommStatementsEmailQuarterly">
+                                    Quarterly
+                                </label>
+                            </p>
+                        </p>
+                        <p>
+                            <p>
+                                <b>Quarterly newsletter communication preference</b>
+                            </p>
+                            <p>
+                                <input type="radio" id="naturalPerson3CommNewsletterPost" name="naturalPerson3CommNewsletter" value="naturalPerson3CommNewsletterPost" checked />
+                                <label for="naturalPerson3CommNewsletterPost">
+                                    POST
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommNewsletterEmail" name="naturalPerson3CommNewsletter" value="naturalPerson3CommNewsletterEmail" />
+                                <label for="naturalPerson3CommNewsletterEmail">
+                                    E-MAIL
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommNewsletterBoth" name="naturalPersonComm3Newsletter" value="naturalPerson3CommNewsletterBoth" />
+                                <label for="naturalPerson3CommNewsletterBoth">
+                                    BOTH
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3CommNewsletterNone" name="naturalPersonComm3Newsletter" value="naturalPerson3CommNewsletterNone" />
+                                <label for="naturalPerson3CommNewsletterNone">
+                                    NONE
+                                </label>
+                            </p>
+                        </p>
+                        <p>
+                            <h2>TAX STATUS</h2>
+                            
+                            <p>
+                                Foord Unit Trusts (RF) (Pty) Ltd is compelled to comply with the reporting requirements of the South African Revenue Service (SARS) in relation to Automatic Exchange of Information.
+                            </p>
+                            
+                            <p>
+                                Are you eligible for a reduction of dividends tax withheld on distributions? If YES, please complete the additional form: <a href="http://sfs.foord.co.za/Shared%20Documents/Application%20Forms/Dividends%20Tax%20Exemption%20Form.pdf" target="_blank">Dividends Tax Exemption Form</a> and <b>fax</b> it to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.<br> 
+                                &nbsp;&nbsp;
+                                <input type="radio" id="naturalPerson3TaxReductionYes" name="naturalPerson3TaxReduction" value="naturalPerson3TaxReductionYes" />
+                                <label for="naturalPerson3TaxReductionYes">
+                                    YES
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3TaxReductionNo" name="naturalPerson3TaxReduction" value="naturalPerson3TaxReductionNo" checked />
+                                <label for="naturalPerson3TaxReductionNo">
+                                    NO
+                                </label>
+                            </p>
+                            
+                            <p>
+                                Are you resident in South Africa for the purposes of South African income tax?<br> 
+                                &nbsp;&nbsp;
+                                <input type="radio" id="naturalPerson3TaxSaResidentYes" name="naturalPerson3TaxSaResident" value="naturalPerson3TaxSaResidentYes" onclick="naturalPerson3TaxSaResidentChanged();" />
+                                <label for="naturalPerson3TaxSaResidentYes">
+                                    YES
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3TaxSaResidentNo" name="naturalPerson3TaxSaResident" value="naturalPerson3TaxSaResidentNo" checked onclick="naturalPerson3TaxSaResidentChanged();" />
+                                <label for="naturalPerson3TaxSaResidentNo">
+                                    NO
+                                </label>
+                                
+                                <table class="formTable" id="naturalPerson3SaIncomeTaxNumberTable" style="display: none;">
+                                    <tr>
+                                        <td class="labelColumnWide">
+                                            SA INCOME TAX NUMBER
+                                        </td>
+                                        <td class="inputColumn required">
+                                            <input type="text" id="naturalPerson3SaIncomeTaxNumber" name="naturalPerson3SaIncomeTaxNumber" maxlength="13" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </p>
+                            
+                            <p>
+                                Are you subject to taxation in any other country or jurisdiction?<br> 
+                                &nbsp;&nbsp;
+                                <input type="radio" id="naturalPerson3TaxOtherCountryYes" name="naturalPerson3TaxOtherCountry" value="naturalPerson3TaxOtherCountryYes" onclick="naturalPerson3TaxOtherCountryChanged();" />
+                                <label for="naturalPerson3TaxOtherCountryYes">
+                                    YES
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3TaxOtherCountryNo" name="naturalPerson3TaxOtherCountry" value="naturalPerson3TaxOtherCountryNo" checked onclick="naturalPerson3TaxOtherCountryChanged();" />
+                                <label for="naturalPerson3TaxOtherCountryNo">
+                                    NO
+                                </label>
+                            </p>
+                            
+                            <table class="formTable" id="naturalPerson3ForeignTaxTable" style="display: none;">
+                                <tr>
+                                    <td class="labelColumnWide">
+                                        NAMES OF FOREIGN COUNTRIES
+                                    </td>
+                                    <td class="inputColumn required">
+                                        <input type="text" id="naturalPerson3TaxForeignCountries" name="naturalPerson3TaxForeignCountries" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="labelColumnWide">
+                                        FOREIGN TAX NUMBERS
+                                    </td>
+                                    <td class="inputColumn required">
+                                        <input type="text" id="naturalPerson3TaxForeignTaxNumbers" name="naturalPerson3TaxForeignTaxNumbers" maxlength="30" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+                        <p>
+                            <h2>PUBLIC OFFICE (POLITCALLY EXPOSED PERSONS)</h2>
+                            
+                            <p>
+                                A politically exposed person (PEP) is defined by the Financial Action Task Force (FATF) as an individual who is or has been entrusted with a prominent public function. (e.g., Heads of State or of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials).</p>
+                            </p>
+                            
+                            <p>
+                                Are you a PEP (based on the above definition) and/or are you related to a PEP? 
+                                &nbsp;&nbsp;
+                                <input type="radio" id="naturalPerson3PepYes" name="naturalPerson3Pep" value="naturalPerson3PepYes" onclick="naturalPerson3PepChanged();" />
+                                <label for="naturalPerson3PepYes">
+                                    YES
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="naturalPerson3PepNo" name="naturalPerson3Pep" value="naturalPerson3PepNo" checked  onclick="naturalPerson3PepChanged();" />
+                                <label for="naturalPerson3PepNo">
+                                    NO
+                                </label>
+                                
+                                <table class="formTable" id="naturalPerson3PepTable" style="display: none;">
+                                    <tr>
+                                        <td class="labelColumnWide">
+                                            DETAILS
+                                        </td>
+                                        <td class="inputColumn required">
+                                            <input type="text" id="naturalPerson3PepDetails" name="naturalPerson3PepDetails" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </p>
+                        </p>
+                    </div>
+				</div>
+				
+				<div id="legalEntityDiv" style="display:none;" class="paddedDiv">
+					<table class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+								TYPE OF INSTITUTION
+							</td>
+							<td class="inputColumn">
+                                <div class="fancySelect">
+								    <select id="legalEntityTypeOfInstitution" name="legalEntityTypeOfInstitution"></select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								REGISTERED NAME
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityRegisteredName" name="legalEntityRegisteredName" maxlength="50" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								TRADING NAME
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityTradingName" name="legalEntityTradingName" maxlength="50" />
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                REGISTRATION NUMBER
+                            </label>
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityRegistrationNumber" name="legalEntityRegistrationNumber" maxlength="50" />
+                            </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								MASTER OF HIGH COURT ADDRESS (TRUSTS)
+							</label>
+							</td>
+							<td class="inputColumn2">
+								<input type="text" id="legalEntityMasterHighCourtAddress" name="legalEntityMasterHighCourtAddress" maxlength="100" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								INCOME TAX NUMBER
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityIncomeTaxNumber" name="legalEntityIncomeTaxNumber" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								VAT NUMBER
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityVatNumber" name="legalEntityVatNumber" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+                            <td class="labelColumnWide">
+                            <label>
+                                MAIN BUSINESS ACTIVITY
+                            </label>
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityMainBusinessActivity" name="legalEntityMainBusinessActivity" maxlength="30" />
+                            </td>
+                        </tr>
+						<tr>
+							<td class="labelColumnWide">
+								REGISTERED ADDRESS
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityAddress1" name="legalEntityAddress1" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityAddress2" name="legalEntityAddress2" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityAddress3" name="legalEntityAddress3" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL CODE
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityAddress4" name="legalEntityAddress4" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								Postal address same as registered address?
+							</td>
+							<td>
+								<input type="checkbox" id="legalEntityPostalAddressSame" name="legalEntityPostalAddressSame" onclick="legalEntityPostalSameAsResidentialChanged();" />
+							</td>
+						</tr>
+					</table>
+					<table id="legalEntityPostalAddressTable" class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL ADDRESS
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityPostalAddress1" name="legalEntityPostalAddress1" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityPostalAddress2" name="legalEntityPostalAddress2" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityPostalAddress3" name="legalEntityPostalAddress3" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+								POSTAL CODE
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityPostalAddress4" name="legalEntityPostalAddress4" maxlength="30" />
+							</td>
+						</tr>
+					</table>
+					<table class="formTable">
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								CONTACT PERSON
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityContactPerson" name="legalEntityContactPerson" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								CONTACT PERSON TEL.
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityContactPersonTel" name="legalEntityContactPersonTel" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								CONTACT PERSON FAX
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityContactPersonFax" name="legalEntityContactPersonFax" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								CONTACT PERSON EMAIL
+							</label>
+							</td>
+							<td class="inputColumn required">
+								<input type="text" id="legalEntityContactPersonEmail" name="legalEntityContactPersonEmail" maxlength="50" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								ADMIN PERSON
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityAdminPerson" name="legalEntityAdminPerson" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								ADMIN PERSON TEL
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityAdminPersonTel" name="legalEntityAdminPersonTel" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								ADMIN PERSON FAX
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityAdminPersonFax" name="legalEntityAdminPersonFax" maxlength="30" />
+							</td>
+						</tr>
+						<tr>
+							<td class="labelColumnWide">
+							<label>
+								ADMIN PERSON EMAIL
+							</label>
+							</td>
+							<td class="inputColumn">
+								<input type="text" id="legalEntityAdminPersonEmail" name="legalEntityAdminPersonEmail" maxlength="50" />
+							</td>
+						</tr>
+					</table>
+					<p>
+                        <p>
+                            <b>Investment statement communication preference</b>
+                        </p>
+                        <p>
+                            <input type="radio" id="legalEntityCommStatementsPost" name="legalEntityCommStatements" value="legalEntityCommStatementsPost" onclick="legalEntityCommStatementsChanged();" />
+                            <label for="legalEntityCommStatementsPost">
+                                POST (quarterly)
+                            </label>
+                            <br>
+                            <input type="radio" id="legalEntityCommStatementsEmail" name="legalEntityCommStatements" value="legalEntityCommStatementsEmail" onclick="legalEntityCommStatementsChanged();" checked />
+                            <label for="legalEntityCommStatementsEmail">
+                                E-MAIL
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommStatementsEmailWeekly" name="legalEntityCommStatementsEmailFrequency" value="legalEntityCommStatementsEmailWeekly" />
+                            <label for="legalEntityCommStatementsEmailWeekly">
+                                Weekly
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommStatementsEmailMonthly" name="legalEntityCommStatementsEmailFrequency" value="legalEntityCommStatementsEmailMonthly" checked />
+                            <label for="legalEntityCommStatementsEmailMonthly">
+                                Monthly
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommStatementsEmailQuarterly" name="legalEntityCommStatementsEmailFrequency" value="legalEntityCommStatementsEmailQuarterly" />
+                            <label for="legalEntityCommStatementsEmailQuarterly">
+                                Quarterly
+                            </label>
+                        </p>
+                    </p>
+                    <p>
+                        <p>
+                            <b>Quarterly newsletter communication preference</b>
+                        </p>
+                        <p>
+                            <input type="radio" id="legalEntityCommNewsletterPost" name="legalEntityCommNewsletter" value="legalEntityCommNewsletterPost" checked />
+                            <label for="legalEntityCommNewsletterPost">
+                                POST
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommNewsletterEmail" name="legalEntityCommNewsletter" value="legalEntityCommNewsletterEmail" />
+                            <label for="legalEntityCommNewsletterEmail">
+                                E-MAIL
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommNewsletterBoth" name="legalEntityCommNewsletter" value="legalEntityCommNewsletterBoth" />
+                            <label for="legalEntityCommNewsletterBoth">
+                                BOTH
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityCommNewsletterNone" name="legalEntityCommNewsletter" value="legalEntityCommNewsletterNone" />
+                            <label for="legalEntityCommNewsletterNone">
+                                NONE
+                            </label>
+                        </p>
+                    </p>
+					
+					<h2>TAX STATUS</h2>
+	                <p>
+	                    Is the investing entity exempt from having dividend tax withheld on distributions? If YES, please complete the additional form: <a href="http://sfs.foord.co.za/Shared%20Documents/Application%20Forms/Dividends%20Tax%20Exemption%20Form.pdf" target="_blank">Dividends Tax Exemption Form</a> and <b>fax</b> it to Foord Unit Trusts on 021 532 6970, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.<br>
+	                    &nbsp;&nbsp;
+	                    <input type="radio" id="legalEntityTaxReductionYes" name="legalEntityTaxReduction" value="legalEntityTaxReductionYes" />
+	                    <label for="legalEntityTaxReductionYes">
+	                        YES
+	                    </label>
+	                    &nbsp;
+	                    <input type="radio" id="naturalPersonTaxReductionNo" name="legalEntityTaxReduction" value="legalEntityTaxReductionNo" checked />
+	                    <label for="legalEntityTaxReductionNo">
+	                        NO
+	                    </label>
+	                </p>
+	                
+	                <p>
+                        NOTE: Distributions from a Real Estate Investment Trust ("REIT") are regarded as taxable local dividends and are subject to tax at your marginal tax rate. However, these dividends will be exempt from dividends tax.
+                    </p>
+                    
+                    <p>
+                        Foord is compelled to comply with the reporting requirements of the South African Revenue Service (SARS) in relation to Automatic Exchange of Information.
+                    </p>
+                    
+                    <p>
+                        Is the entity resident in South Africa for the purposes of South African income tax?<br> 
+                        &nbsp;&nbsp;
+                        <input type="radio" id="legalEntityTaxSaResidentYes" name="legalEntityTaxSaResident" value="legalEntityTaxSaResidentYes" checked />
+                        <label for="legalEntityTaxSaResidentYes">
+                            YES
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="legalEntityTaxSaResidentNo" name="legalEntityTaxSaResident" value="legalEntityTaxSaResidentNo" />
+                        <label for="legalEntityTaxSaResidentNo">
+                            NO
+                        </label>
+                    </p>
+                    
+                    <p>
+                        Is the entity subject to taxation in any other country or jurisdiction?<br>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="legalEntityTaxOtherCountryYes" name="legalEntityTaxOtherCountry" value="legalEntityTaxOtherCountryYes" onclick="legalEntityTaxOtherCountryChanged();" />
+                        <label for="legalEntityTaxOtherCountryYes">
+                            YES
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="legalEntityTaxOtherCountryNo" name="legalEntityTaxOtherCountry" value="legalEntityTaxOtherCountryNo" checked onclick="legalEntityTaxOtherCountryChanged();" />
+                        <label for="legalEntityTaxOtherCountryNo">
+                            NO
+                        </label>
+                    </p>
+                    
+                    <table class="formTable" id="legalEntityForeignTaxTable" style="display: none;">
+                        <tr>
+                            <td class="labelColumnWide">
+                                NAMES OF FOREIGN COUNTRIES
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityTaxForeignCountries" name="legalEntityTaxForeignCountries" />
+                            </td>
+                        </tr>
+                        <tr>
+	                        <td class="labelColumnWide">
+	                            FOREIGN TAX NUMBERS
+	                        </td>
+	                        <td class="inputColumn required">
+	                            <input type="text" id="legalEntityTaxForeignTaxNumbers" name="legalEntityTaxForeignTaxNumbers" maxlength="30" />
+	                        </td>
+	                    </tr>
+	                </table>
+	                
+	                <p><b>Classification under tax regulations</b></p>
+	                
+	                <p>Tax regulations require us to collect certain information about each investor's tax residency and tax classifications. In terms of an inter-governmental agreement between South Africa and the United States, we may be obliged to provide information about your account(s) to the relevant tax authorities depending on your classification.</p>
+	                
+	                <p>Brief guidance has been provided in <a href="TaxClassificationExplanations.html" class="fancyPopup">Tax Classification Explanations</a> regarding the classifications. Contact us if you are unsure of your classification. Please choose a classification from the list below that describes the entity:</p>
+	                
+	                <p class="required">
+                        <input type="radio" id="legalEntityTaxClassificationSAFI" name="legalEntityTaxClassification" value="legalEntityTaxClassificationSAFI" checked />
+                        <label for="legalEntityTaxClassificationSAFI">
+                            1. South African Financial Institution/Partner Jurisdiction Financial Institution
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationPFFI" name="legalEntityTaxClassification" value="legalEntityTaxClassificationPFFI" />
+                        <label for="legalEntityTaxClassificationPFFI">
+                            2. Participating Foreign Financial Institution
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationNPFFI" name="legalEntityTaxClassification" value="legalEntityTaxClassificationNPFFI" />
+                        <label for="legalEntityTaxClassificationNPFFI">
+                            3. Non-Participating Foreign Financial Institution
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationFIRUSA" name="legalEntityTaxClassification" value="legalEntityTaxClassificationFIRUSA" />
+                        <label for="legalEntityTaxClassificationFIRUSA">
+                            4. Financial Institution Resident in the United States of America, or in a United States Territory
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationDCFFI" name="legalEntityTaxClassification" value="legalEntityTaxClassificationDCFFI" />
+                        <label for="legalEntityTaxClassificationDCFFI">
+                            5. Deemed Compliant Foreign Financial Institution (apart from those listed above)
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationEBO" name="legalEntityTaxClassification" value="legalEntityTaxClassificationEBO" />
+                        <label for="legalEntityTaxClassificationEBO">
+                            6. Exempt Beneficial Owner
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationANFE" name="legalEntityTaxClassification" value="legalEntityTaxClassificationANFE" />
+                        <label for="legalEntityTaxClassificationANFE">
+                            7. Active Non-Financial Entity
+                        </label>
+                    </p>
+                    <p>
+                        <input type="radio" id="legalEntityTaxClassificationPNFE" name="legalEntityTaxClassification" value="legalEntityTaxClassificationPNFE" />
+                        <label for="legalEntityTaxClassificationPNFE">
+                            8. Passive Non-Financial Entity
+                        </label>
+                    </p>
+                    
+                    <p>
+                        <h2>PUBLIC OFFICE (POLITCALLY EXPOSED PERSONS)</h2>
+                        
+                        <p>
+                            A politically exposed person (PEP) is defined by the Financial Action Task Force (FATF) as an individual who is a prominent public figure or has been entrusted with a prominent public function (e.g., heads of state or of government, senior politicians, senior government, judicial or military officials, senior executives of stateowned corporations, important political party officials).
+                        </p>
+                        
+                        <p>
+                            Is the manager or authorised person a PEP (based on the above definition), or related to a PEP?
+                            <br>
+                            <input type="radio" id="legalEntityPepYes" name="legalEntityPep" value="legalEntityPepYes" onclick="legalEntityPepChanged();" />
+                            <label for="legalEntityPepYes">
+                                YES
+                            </label>
+                            &nbsp;
+                            <input type="radio" id="legalEntityPepNo" name="legalEntityPep" value="legalEntityPepNo" checked onclick="legalEntityPepChanged();" />
+                            <label for="legalEntityPepNo">
+                                NO
+                            </label>
+                            
+                            <table class="formTable" id="legalEntityPepTable" style="display: none;">
+                                <tr>
+                                    <td class="labelColumnWide">
+                                        DETAILS
+                                    </td>
+                                    <td class="inputColumn required">
+                                        <input type="text" id="legalEntityPepDetails" name="legalEntityPepDetails" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+                    </p>                    
+                    
+					<h2 id="investorH">AUTHORISED PERSON DETAILS</h2>
+					<p>This is to be completed by a person who is duly authorised to enter into a business relationship with Foord and will be signing this form. Includes managers, authorised persons and all individuals who hold 25% or more of the voting rights of the entity.</p>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                TITLE
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="legalEntityAuthorisedPersonTitle" name="legalEntityAuthorisedPersonTitle"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FIRST NAME(S)
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonFirstNames" name="legalEntityAuthorisedPersonFirstNames" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                SURNAME
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonSurname" name="legalEntityAuthorisedPersonSurname" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                SA IDENTITY NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonSaIdNumber" name="legalEntityAuthorisedPersonSaIdNumber" maxlength="13" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                NATIONALITY
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonNationality" name="legalEntityAuthorisedPersonNationality" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ADDITIONAL NATIONALITIES
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonAdditionalNationalities" name="legalEntityAuthorisedPersonAdditionalNationalities" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FOREIGN PASSPORT NUMBERS
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonForeignPassportNumbers" name="legalEntityAuthorisedPersonForeignPassportNumbers" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                DATE OF BIRTH
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect" style="width: 70px;">
+                                    <select id="legalEntityAuthorisedPersonDobDay" name="legalEntityAuthorisedPersonDobDay" class="selectDay"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 100px;">
+                                    <select id="legalEntityAuthorisedPersonDobMonth" name="legalEntityAuthorisedPersonDobMonth" class="selectMonth"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 80px;">
+                                    <select id="legalEntityAuthorisedPersonDobYear" name="legalEntityAuthorisedPersonDobYear" class="selectYear"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY OF BIRTH
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonCountryOfBirth" name="legalEntityAuthorisedPersonCountryOfBirth" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                OCCUPATION
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonOccupation" name="legalEntityAuthorisedPersonOccupation" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                GENDER
+                            </td>
+                            <td class="required">
+                                <input type="radio" id="legalEntityAuthorisedPersonGenderMale" name="legalEntityAuthorisedPersonGender" value="legalEntityAuthorisedPersonGenderMale" />
+                                <label for="legalEntityAuthorisedPersonGenderMale">
+                                    Male
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="legalEntityAuthorisedPersonGenderFemale" name="legalEntityAuthorisedPersonGender" value="legalEntityAuthorisedPersonGenderFemale" />
+                                <label for="legalEntityAuthorisedPersonGenderFemale">
+                                    Female
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                RESIDENTIAL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonAddress1" name="legalEntityAuthorisedPersonAddress1" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonAddress2" name="legalEntityAuthorisedPersonAddress2" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonAddress3" name="legalEntityAuthorisedPersonAddress3" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonCountry" name="legalEntityAuthorisedPersonCountry" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonAddress4" name="legalEntityAuthorisedPersonAddress4" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                Postal address same as residential address?
+                            </td>
+                            <td>
+                                <input type="checkbox" id="legalEntityAuthorisedPersonPostalAddressSame" name="legalEntityAuthorisedPersonPostalAddressSame" onclick="legalEntityAuthorisedPersonPostalSameAsResidentialChanged();" />
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="legalEntityAuthorisedPersonPostalAddressTable" class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonPostalAddress1" name="legalEntityAuthorisedPersonPostalAddress1" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonPostalAddress2" name="legalEntityAuthorisedPersonPostalAddress2" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonPostalAddress3" name="legalEntityAuthorisedPersonPostalAddress3" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonPostalCountry" name="legalEntityAuthorisedPersonPostalCountry" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonPostalAddress4" name="legalEntityAuthorisedPersonPostalAddress4" maxlength="30" />
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                MOBILE NUMBER
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonContactNumber" name="legalEntityAuthorisedPersonContactNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ALTERNATE CONTACT NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonAlternateContactNumber" name="legalEntityAuthorisedPersonAlternateContactNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FAX NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPersonFaxNumber" name="legalEntityAuthorisedPersonFaxNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                EMAIL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPersonEmailAddress" name="legalEntityAuthorisedPersonEmailAddress" maxlength="50" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <h2>ADDITIONAL AUTHORISED PERSON <input type="checkbox" id="legalEntityAuthorisedPerson2" name="legalEntityAuthorisedPerson2" onclick="legalEntityAuthorisedPerson2Changed();" /></h2>
+                </div>
+                    
+                <div id="legalEntityAuthorisedPerson2Div" style="display:none;">
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                TITLE
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="legalEntityAuthorisedPerson2Title" name="legalEntityAuthorisedPerson2Title"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FIRST NAME(S)
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2FirstNames" name="legalEntityAuthorisedPerson2FirstNames" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                SURNAME
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2Surname" name="legalEntityAuthorisedPerson2Surname" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                SA IDENTITY NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2SaIdNumber" name="legalEntityAuthorisedPerson2SaIdNumber" maxlength="13" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                NATIONALITY
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2Nationality" name="legalEntityAuthorisedPerson2Nationality" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ADDITIONAL NATIONALITIES
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2AdditionalNationalities" name="legalEntityAuthorisedPerson2AdditionalNationalities" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FOREIGN PASSPORT NUMBERS
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2ForeignPassportNumbers" name="legalEntityAuthorisedPerson2ForeignPassportNumbers" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                DATE OF BIRTH
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect" style="width: 70px;">
+                                    <select id="legalEntityAuthorisedPerson2DobDay" name="legalEntityAuthorisedPerson2DobDay" class="selectDay"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 100px;">
+                                    <select id="legalEntityAuthorisedPerson2DobMonth" name="legalEntityAuthorisedPerson2DobMonth" class="selectMonth"></select>
+                                </div>
+                                <div class="fancySelect" style="width: 80px;">
+                                    <select id="legalEntityAuthorisedPerson2DobYear" name="legalEntityAuthorisedPerson2DobYear" class="selectYear"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY OF BIRTH
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2CountryOfBirth" name="legalEntityAuthorisedPerson2CountryOfBirth" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                OCCUPATION
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2Occupation" name="legalEntityAuthorisedPerson2Occupation" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                GENDER
+                            </td>
+                            <td class="required">
+                                <input type="radio" id="legalEntityAuthorisedPerson2GenderMale" name="legalEntityAuthorisedPerson2Gender" value="legalEntityAuthorisedPerson2GenderMale" />
+                                <label for="legalEntityAuthorisedPerson2GenderMale">
+                                    Male
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="legalEntityAuthorisedPerson2GenderFemale" name="legalEntityAuthorisedPerson2Gender" value="legalEntityAuthorisedPerson2GenderFemale" />
+                                <label for="legalEntityAuthorisedPerson2GenderFemale">
+                                    Female
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                RESIDENTIAL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2Address1" name="legalEntityAuthorisedPerson2Address1" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2Address2" name="legalEntityAuthorisedPerson2Address2" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2Address3" name="legalEntityAuthorisedPerson2Address3" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2Country" name="legalEntityAuthorisedPerson2Country" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2Address4" name="legalEntityAuthorisedPerson2Address4" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                Postal address same as residential address?
+                            </td>
+                            <td>
+                                <input type="checkbox" id="legalEntityAuthorisedPerson2PostalAddressSame" name="legalEntityAuthorisedPerson2PostalAddressSame" onclick="legalEntityAuthorisedPerson2PostalSameAsResidentialChanged();" />
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="legalEntityAuthorisedPerson2PostalAddressTable" class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2PostalAddress1" name="legalEntityAuthorisedPerson2PostalAddress1" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2PostalAddress2" name="legalEntityAuthorisedPerson2PostalAddress2" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2PostalAddress3" name="legalEntityAuthorisedPerson2PostalAddress3" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                COUNTRY
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2PostalCountry" name="legalEntityAuthorisedPerson2PostalCountry" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                POSTAL CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2PostalAddress4" name="legalEntityAuthorisedPerson2PostalAddress4" maxlength="30" />
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                MOBILE NUMBER
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2ContactNumber" name="legalEntityAuthorisedPerson2ContactNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ALTERNATE CONTACT NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2AlternateContactNumber" name="legalEntityAuthorisedPerson2AlternateContactNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                FAX NUMBER
+                            </td>
+                            <td class="inputColumn">
+                                <input type="text" id="legalEntityAuthorisedPerson2FaxNumber" name="legalEntityAuthorisedPerson2FaxNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                EMAIL ADDRESS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="legalEntityAuthorisedPerson2EmailAddress" name="legalEntityAuthorisedPerson2EmailAddress" maxlength="50" />
+                            </td>
+                        </tr>
+                    </table>
+				</div>
+				
+				<p class="paddedNavigationParagraph">
+					<input type="button" value="< BACK" onClick="showLayer('step2');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#applicationForm').validate()" />
+				</p>
+			</div>
+			
+			<div id="step4" style="display:none;">
+                <div>
+                    <table width="100%" class="stepTable">
+                        <tr>
+                           <td class="stepHeading">OVERVIEW</td>
+                           <td class="stepHeading">INVESTMENT DETAILS</td>
+                           <td class="stepHeading">INVESTOR DETAILS</td>
+                           <td class="activeStepHeading">PAYMENT DETAILS</td>
+                           <td class="stepHeading">FINAL STEPS</td>
+                        </tr>
+                        <tr>
+                            <td class="step">STEP 01</td>
+                            <td class="step">STEP 02</td>
+                            <td class="step">STEP 03</td>
+                            <td class="activeStep">STEP 04</td>
+                            <td class="step">STEP 05</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="stepsHrTd">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h1>PAYMENT DETAILS</h1>
+                    <h2>PAYMENT METHOD</h2>
+                    <p>
+	                    <h2>Notes</h2>
+	                    <ul>
+	                        <li>Cash deposits are not accepted.</li>
+	                        <li>We may cancel a debit order if a transaction cannot be completed owing to insufficient funds. Please allow 3 days notice for new debit orders.</li>
+	                    </ul>
+	                </p>
+                    <input type="checkbox" id="paymentMethodMonthlyDebitOrder" name="paymentMethodMonthlyDebitOrder" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodMonthlyDebitOrder">
+                        Monthly Debit Order
+                    </label>
+                    &nbsp;
+                    <input type="checkbox" id="paymentMethodEft" name="paymentMethodEft" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodEft">
+                        Electronic Transfer (EFT)
+                    </label>
+                    &nbsp;
+                    <input type="checkbox" id="paymentMethodChequeDeposit" name="paymentMethodChequeDeposit" onclick="paymentMethodChanged();" />
+                    <label for="paymentMethodChequeDeposit">
+                        Cheque Deposit
+                    </label>
+                </div>
+                <table class="formTable paddedParagraph">
+                    <tr>
+                        <td class="labelColumnWide">
+                            SOURCE OF INVESTMENT FUNDS
+                        </td>
+                        <td>
+                            <input type="checkbox" id="sourceInvestmentFundsSavings" name="sourceInvestmentFundsSavings" />
+                            <label for="sourceInvestmentFundsSavings">
+                                Savings
+                            </label>
+                            <br>
+                            <input type="checkbox" id="sourceInvestmentFundsBonus" name="sourceInvestmentFundsBonus" />
+                            <label for="sourceInvestmentFundsBonus">
+                                Bonus
+                            </label>
+                            <br>
+                            <input type="checkbox" id="sourceInvestmentFundsInheritance" name="sourceInvestmentFundsInheritance" />
+                            <label for="sourceInvestmentFundsInheritance">
+                                Inheritance
+                            </label>
+                            <br>
+                            <input type="checkbox" id="sourceInvestmentFundsDonations" name="sourceInvestmentFundsDonations" />
+                            <label for="sourceInvestmentFundsDonations">
+                                Donations
+                            </label>
+                            <br>
+                            <input type="checkbox" id="sourceInvestmentFundsOther" name="sourceInvestmentFundsOther" onclick="sourceInvestmentFundsOtherChanged();" />
+                            <label for="sourceInvestmentFundsOther">
+                                Other:
+                            </label>
+                            <br>
+                            <input type="text" id="sourceInvestmentFundsOtherDescription" name="sourceInvestmentFundsOtherDescription" class="fancyInput" style="width: 230px;" size="30" maxlength="30" disabled />
+                        </td>
+                    </tr>
+                </table>
+                <div id="foordBankDetailsDiv" style="display:none;">
+                    <h2>FOORD BANK DETAILS</h2>
+                    <table style="margin-bottom: 12px;">
+                        <tr>
+                            <td style="width: 120px;">
+                                Account Name
+                            </td>
+                            <td>
+                                FOORD UNIT TRUSTS (RF) (PTY) LTD
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Account Number
+                            </td>
+                            <td>
+                                6204 4711 366
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bank Name
+                            </td>
+                            <td>
+                                FIRST NATIONAL BANK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Branch Name
+                            </td>
+                            <td>
+                                REMOTE BANKING SERVICES
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Branch Code
+                            </td>
+                            <td>
+                                250655
+                            </td>
+                        </tr>
+                    </table>    
+                </div>
+                <div id="debitOrderDiv" style="display: none; margin-top: 12px;">
+                    <table id="monthlyDebitOrderTable" class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                DEBIT ORDER DAY
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="monthlyDebitOrderDay" name="monthlyDebitOrderDay"></select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                DEBIT ORDER COMMENCEMENT<br>
+                                <div class="subLabel">Please allow at least 3 days notice</div>
+                            </td>
+                            <td class="inputColumn">
+                                <div class="fancySelect">
+                                    <select id="monthlyDebitOrderCommencementMonth" name="monthlyDebitOrderCommencementMonth"></select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT HOLDER SURNAME
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitSurname" name="accountHolderDebitSurname" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                INITIALS
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitInitials" name="accountHolderDebitInitials" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BANK
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitBank" name="accountHolderDebitBank" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BRANCH
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitBranch" name="accountHolderDebitBranch" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BRANCH CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitBranchCode" name="accountHolderDebitBranchCode" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT NUMBER
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitAccountNumber" name="accountHolderDebitAccountNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT TYPE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderDebitAccountType" name="accountHolderDebitAccountType" maxlength="30" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <p><b>Third party bank account</b></p>
+                    <p>
+                        Is the bank account to be debited monthly a third party bank account?<br>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="accountHolderThirdPartyYes" name="accountHolderThirdParty" value="accountHolderThirdPartyYes" onclick="accountHolderThirdPartyAuthoriseClicked();" />
+                        <label for="accountHolderThirdPartyYes">
+                            YES
+                        </label>
+                        &nbsp;
+                        <input type="radio" id="accountHolderThirdPartyNo" name="accountHolderThirdParty" value="accountHolderThirdPartyNo" onclick="accountHolderThirdPartyAuthoriseClicked();" checked />
+                        <label for="accountHolderThirdPartyNo">
+                            NO
+                        </label>
+                    </p>
+                    
+                    <table class="formTable">    
+                        <tr>
+                            <td class="labelColumnWide">
+                                PAYOUT ACCOUNT
+                            </td>
+                            <td>
+                                <input type="radio" id="payoutAccountSame" name="payoutAccount" value="payoutAccountSame" onclick="payoutAccountChanged();" checked />
+                                <label for="payoutAccountSame">
+                                    Same as above
+                                </label>
+                                &nbsp;
+                                <input type="radio" id="payoutAccountOther" name="payoutAccount" value="payoutAccountOther" onclick="payoutAccountChanged();" />
+                                <label for="payoutAccountOther">
+                                    Other account
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="payoutAccountDiv">
+                    <h2>PAYOUT ACCOUNT</h2>
+                    <table class="formTable">
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT HOLDER NAME
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutName" name="accountHolderPayoutName" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BANK
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutBank" name="accountHolderPayoutBank" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BRANCH
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutBranch" name="accountHolderPayoutBranch" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                BRANCH CODE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutBranchCode" name="accountHolderPayoutBranchCode" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT NUMBER
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutAccountNumber" name="accountHolderPayoutAccountNumber" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labelColumnWide">
+                                ACCOUNT TYPE
+                            </td>
+                            <td class="inputColumn required">
+                                <input type="text" id="accountHolderPayoutAccountType" name="accountHolderPayoutAccountType" maxlength="30" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <input type="checkbox" id="acceptedPayoutAccount" name="acceptedPayoutAccount" />
+                    <label for="acceptedPayoutAccount">
+                        I have read and understood the <a href="PayoutAccounts.html" class="fancyPopup">Notes On Bank Account Details & Payout Accounts</a>
+                    </label>
+                </p>
+                <p class="paddedNavigationParagraph">
+                    <input type="button" value="< BACK" onClick="showLayer('step3');" class="navigationInput" />&nbsp;&nbsp;<input type="submit" value="NEXT >" class="navigationInput" onclick="$('#applicationForm').validate()" />
+                </p>
+            </div>
+			
+			<div id="step5" style="display:none;">
+			    <table width="100%" class="stepTable">
+                    <tr>
+                       <td class="stepHeading">OVERVIEW</td>
+                       <td class="stepHeading">INVESTMENT DETAILS</td>
+                       <td class="stepHeading">INVESTOR DETAILS</td>
+                       <td class="stepHeading">PAYMENT DETAILS</td>
+                       <td class="activeStepHeading">FINAL STEPS</td>
+                    </tr>
+                    <tr>
+                        <td class="step">STEP 01</td>
+                        <td class="step">STEP 02</td>
+                        <td class="step">STEP 03</td>
+                        <td class="step">STEP 04</td>
+                        <td class="activeStep">STEP 05</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="stepsHrTd">
+                            <hr />
+                        </td>
+                    </tr>
+                </table>
+				<div>
+					<h1>FINAL STEPS</h1>
+					<p>
+					    <ol>
+					        <li>Once you are satisfied that all fields have been completed accurately and have accepted all the terms and conditions below, click the <b>GENERATE FORM</b> button.</li>
+					        <li><b>Save</b> the compiled PDF document somewhere appropriate on your computer. You will also be emailed a copy.</li>
+                            <li><b>Print</b> the document and <b>sign</b> where required.</li>
+                            <li><b>Fax</b> the document together with the required supporting documentation and proof of the deposit and a cancelled cheque or recent bank statement to Foord Unit Trusts on <b>021 532 6970</b>, or <b>e-mail</b> to <a href="mailto:unittrusts@foord.co.za">unittrusts@foord.co.za</a>.</li>
+                            <li><b>Post</b> the original document and supporting documentation to <b>Foord Unit Trusts, PO Box 135, Howard Place, 7450</b>.</li>
+                            <li>Please note that the business cut-off time for receiving instructions is 14h00.</li>
+					    </ol>
+					</p>
+					<p>
+						<input type="checkbox" id="investorDeclaration" name="investorDeclaration" onclick="termsConditionsChecked();" />
+						<label for="investorDeclaration">
+							I have read and agree to the <a href="InvestorDeclaration.html" class="fancyPopup">Investor Declaration</a>
+						</label>
+					</p>
+					<p>
+                        <input type="checkbox" id="fica" name="fica" onclick="termsConditionsChecked();" />
+                        <label for="fica">
+                            I have read and am aware of the <a href="SupportingDocumentation.html" class="fancyPopup">Supporting Documentation</a> required
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="foordTermsConditions" name="foordTermsConditions" onclick="termsConditionsChecked();" />
+                        <label for="foordTermsConditions">
+                            I have read and agree to the <a href="FoordTermsConditions.html" class="fancyPopup">Foord Terms &amp; Conditions</a> of trading
+                        </label>
+                    </p>
+					<p>
+						<input type="checkbox" id="complianceComplaints" name="complianceComplaints" onclick="termsConditionsChecked();" />
+						<label for="complianceComplaints">
+							I am aware of the <a href="ComplianceComplaints.html" class="fancyPopup">Compliance And Complaints Policy</a>
+						</label>
+					</p>
+					<p id="accountHolderThirdPartyAuthorise" style="display: none;">
+                        <input type="checkbox" id="accountHolderThirdPartyAccept" name="accountHolderThirdPartyAccept" onclick="termsConditionsChecked();" />
+                        <label for="accountHolderThirdPartyAccept">
+                            I authorise Foord to debit the specified third party bank account with the monthly amount specified.
+                        </label>
+                    </p>
+					<p class="paddedNavigationParagraph">
+						<input type="button" value="< BACK" onClick="showLayer('step4');" class="navigationInput" />&nbsp;&nbsp;<input id="generateFormInput" type="submit" value="GENERATE FORM" disabled class="compileFormDisabled" />
+					</p>
+				</div>
+			</div>
+			
+			<div id="step6" style="display:none;">
+                <div>
+                    <h1>THANK YOU</h1>
+                    <ul>
+                        <li>Your browser will download the compiled form shortly.</li>
+                        <li>The compiled form has been emailed to the supplied email address.</li>
+                    </ul>
+                </div>
+            </div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+Jar the fonts folder and include in WEB-INF/lib.
